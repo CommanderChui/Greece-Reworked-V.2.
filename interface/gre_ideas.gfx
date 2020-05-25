@@ -1,0 +1,52 @@
+spriteTypes = {	
+
+
+
+	SpriteType = {
+		name = "GFX_idea_traits_strip"
+		texturefile = "gfx/interface/ideas/idea_traits_strip.dds"
+		noOfFrames = 14		
+	}
+
+	### UNIQUE national focus icons				
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_alexander_papagos"
+		texturefile = "gfx/interface/ideas/GRE_Papagos.dds"
+	}
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_panagiotis_gazis"
+		texturefile = "gfx/interface/ideas/GRE_Panagiotis_Gazis.dds"
+	}
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_alexandros_sakellariou"
+		texturefile = "gfx/interface/ideas/GRE_Alexandros Sakellariou.dds"
+	}	
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_aekkea"
+		texturefile = "gfx/interface/ideas/idea_aekkea.dds"
+	}	
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_melissinos_parasxos"
+		texturefile = "gfx/interface/ideas/GRE_melissinos parasxos.dds"
+	}	
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_vasilios_tsarpalis"
+		texturefile = "gfx/interface/ideas/GRE_Basilios Tsarpalis.dds"
+	}
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_neorion"
+		texturefile = "gfx/interface/ideas/idea_neorion.dds"
+	}
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_pyrkal"
+		texturefile = "gfx/interface/ideas/idea_pyrkal.dds"
+	}
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_braxnos_basileios"
+		texturefile = "gfx/interface/ideas/GRE_braxnos_basileios.dds"
+	}
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GRE_biamax"
+		texturefile = "gfx/interface/ideas/idea_biamax.dds"
+	}
+}

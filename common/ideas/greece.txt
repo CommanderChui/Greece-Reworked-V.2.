@@ -1,0 +1,946 @@
+ideas = {
+
+	country = {
+         
+
+         depression = {
+			
+			allowed = {
+				original_tag = GRE
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = great_depression
+			
+			modifier = {
+				production_factory_max_efficiency_factor = -0.2
+				consumer_goods_factor = 0.15
+				production_speed_buildings_factor = -0.2
+				stability_factor = -0.2
+			}
+		}
+
+		GRE_naval_arsenal = {
+            picture = generic_navy_bonus
+            allowed = {
+                always = no
+            }
+
+            allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+            equipment_bonus = {
+                 submarine = {
+                     build_cost_ic = -0.10
+                     instant = yes
+                 }
+                 destroyer = {
+					build_cost_ic = -0.10
+					instant = yes
+				}    
+            }
+        }
+
+        GRE_divided_naval_industry_idea = {
+		    picture = generic_the_london_naval_treaty
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+                always = no
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                industrial_capacity_dockyard = -0.2
+            }
+		}
+        
+        GRE_civilian_shipbuilders = {
+            picture = generic_coastal_navy
+            allowed = {
+                 always = no
+            }
+
+            allowed_civil_war = {
+				always = yes
+			}
+
+
+            removal_cost = -1
+
+           equipment_bonus = {
+                convoy = {
+                   build_cost_ic  = -0.15     
+                   instant = yes
+                }
+            }
+        } 
+
+        GRE_further_arsenal_plans = {
+            picture = generic_sea_focused_navy
+            allowed = {
+                  always = no
+            }
+            
+            allowed_civil_war = {
+                 always = yes
+            }
+            
+            removal_cost = -1
+
+            equipment_bonus = {
+                 light_cruiser = {
+                    build_cost_ic = -0.10
+                    instant = yes
+                }
+
+                 heavy_cruiser = {
+                    build_cost_ic = -0.10
+                    instant = yes
+                }    
+            }
+        }
+
+        GRE_collecting_from_trade = {
+			picture = consumer_goods_icon
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		} 
+
+		GRE_motorized_effort = {
+		    picture = idea_FRA_motorized_focus
+		    allowed = {
+		        always = no
+		    }
+		    
+		    allowed_civil_war = {
+		        always = no
+		    }
+		    
+		    removal_cost = -1
+
+		    equipment_bonus = {
+		        motorized_equipment = {
+		            build_cost_ic = -0.1
+		            instant = yes
+		        }    
+            }
+        }
+
+        GRE_infantry_weapons = {
+            picture = generic_infantry_bonus
+            allowed = {
+                always = no
+            }
+            
+            allowed_civil_war = {
+                always = yes
+            }
+            
+            removal_cost = -1
+
+            equipment_bonus = {
+                infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+					instant = yes
+				}
+			}
+		}
+
+		GRE_divided_nation = {
+            picture = generic_pp_unity_bonus
+            allowed = {
+                always = no
+            }
+            
+            allowed_civil_war = {
+                always = no
+            }
+            
+            removal_cost = -1
+
+            modifier = {
+                war_support_factor = -0.1
+            }
+		}
+
+		GRE_low_stability = {
+		    picture = generic_disjointed_gov
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+                always = no
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                stability_factor = -0.3
+            }
+		}
+
+		GRE_economic_downfall = {
+		    picture = ROM_king_carol_emptied_accounts
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+                always = no
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                consumer_goods_factor = 0.2
+            }
+		}
+
+		GRE_government_crisis = {
+		    picture = generic_neutrality_drift_bonus
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+                always = no
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                political_power_gain = -0.2
+            }
+		}
+
+		GRE_autarky_focus = {
+		    picture = triumphant_will
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+		        always = yes
+		    }
+
+		    removal_cost = -1
+
+		    modifier = {
+		        democratic_drift = -0.1
+		        communism_drift = -0.1
+		    }
+		}
+
+		GRE_national_union = {
+		    picture = generic_fascism_drift_bonus
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+		        always = yes
+		    }
+
+		    removal_cost = -1
+
+		    modifier = {
+		        fascism_drift = 0.1
+		    }
+		}
+
+		GRE_recruitment_effort = {
+		    picture = generic_manpower_bonus
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+		        has_government = fascism
+		        has_government = neutrality
+		    }
+
+		    removal_cost = -1
+
+		    modifier = {
+		        conscription = 0.05
+		        resistance_damage_to_garrison = -0.25
+		    }
+		}
+
+		GRE_national_youth_organisation = {
+		    picture = generic_manpower_bonus
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+		        has_government = neutrality
+		    }
+
+		    removal_cost = -1
+
+		    modifier = {
+		        resistance_damage_to_garrison = -0.25
+		        drift_defence_factor = 0.3
+		    }
+		}
+
+		GRE_military_academy = {
+		    picture = generic_army_war_college
+		    allowed = {
+		        always = no
+		    }
+
+		    removal_cost = -1
+
+		    modifier = {
+				conscription = 0.03
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+
+		GRE_IKA = {
+		    picture = generic_pp_unity_bonus
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+		        has_government = neutrality
+		    }
+
+		    removal_cost = -1
+
+		    modifier = {
+		        political_power_gain = 1
+				drift_defence_factor = 0.5
+				consumer_goods_factor = 0.05
+		    }
+		}
+        
+        GRE_dominant_ideology = {
+		    picture = generic_neutrality_drift_bonus
+		    allowed = {
+		        always = no
+		    }
+
+		    allowed_civil_war = {
+		        has_government = neutrality
+		    }
+
+		    removal_cost = -1
+
+		    modifier = {
+		        neutrality_drift = 0.1
+		    }
+		}
+
+		GRE_metaxas_line_costs = {
+		    picture = generic_foreign_capital
+		    allowed = {
+		        always = no
+		    }
+
+		    removal_cost = -1
+
+		    modifier = {
+		        consumer_goods_factor = 0.1
+		    }
+		}
+
+		GRE_different_approach = {
+			picture = generic_political_support
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				fascism_drift = -0.1
+				neutrality_drift = -0.1
+			}
+		} 
+
+		GRE_democratic_support = {
+			picture = generic_democratic_drift_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				democratic_drift = 0.1
+			}
+		}
+
+		GRE_dem_economic_reform = {
+			picture = generic_agrarian_reform
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				economy_cost_factor = -0.25
+			}
+		} 
+
+		GRE_foreign_investments = {
+			picture = generic_goods_red_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		GRE_welfare_state = {
+			picture = new_deal
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.25
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		GRE_expand_ministries = {
+			picture = SOV_scientist_defect
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.1
+				political_advisor_cost_factor = -0.25
+			}
+		}
+
+		GRE_dem_recruitment = {
+			picture = generic_reserve_divisions
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.015
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		GRE_research_cost = {
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			    consumer_goods_factor = 0.05
+			    research_speed_factor = 0.05
+			}
+		}
+
+		GRE_Philhellenism = {
+			picture = generic_volunteer_expedition_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				opinion_gain_monthly_factor = 0.15
+			}
+		}
+
+		GRE_control_the_banks = {
+			picture = generic_consumer_goods_icon
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		GRE_destroy_fascism = {
+			picture = idea_generic_fascism_banned
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				fascism_drift = -0.1
+			}
+		}
+
+		GRE_coup_plot = {
+			picture = generic_disjointed_gov
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+			    always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.1
+                war_support_factor = -0.1
+				neutrality_drift = -0.1
+			}
+		}
+
+		GRE_patriarch_support = {
+            picture = YUG_orthodox_church_support
+            allowed = {
+                always = no
+            }
+            
+            allowed_civil_war = {
+                always = no
+            }
+            
+            removal_cost = -1
+
+            modifier = {
+                political_power_gain = 0.2
+            }
+		}
+    }
+
+    political_advisor = {
+
+	GRE_damaskinos = {
+
+		picture = generic_political_advisor_europe_5
+		
+		allowed = {
+			original_tag = GRE
+		}
+		
+		traits = { compassionate_gentleman }
+	}
+
+	GRE_georgios_papandreou = {
+
+		picture = generic_political_advisor_europe_2
+			
+		allowed = {
+			original_tag = GRE
+		}
+		
+		traits = { silent_workhorse }
+	}
+
+	GRE_evripidis_bakirtris = {
+
+		picture = generic_political_advisor_europe_3
+		
+		allowed = {
+			original_tag = GRE
+		}
+		
+		traits = { war_industrialist }
+	}
+}
+
+theorist = {
+
+	GRE_nikolaos_plastiras = {
+				
+		picture = generic_army_europe_3
+
+		allowed = {
+			original_tag = GRE
+		}
+		
+		research_bonus = {
+			land_doctrine = 0.07
+		}
+		
+		traits = { military_theorist }
+	}
+
+	GRE_panagiotis_gazis = {
+				
+		picture = generic_army_europe_3
+			
+		allowed = {
+			original_tag = GRE
+		}
+		
+		research_bonus = {
+			air_doctrine = 0.07
+		}
+		
+		traits = { air_warfare_theorist }
+	}
+}
+	# MILITARY
+	army_chief = {
+		
+		GRE_alexander_papagos = {
+			
+			picture = generic_army_europe_3
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_konstantinos_ventiris = {
+			
+			picture = generic_army_europe_5
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+
+		GRE_vasilios_tsarpalis = {
+			
+			picture = generic_air_europe_2
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+
+			
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+	
+		
+		GRE_alexandros_sakellariou = {
+			
+			picture = generic_navy_europe_1
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				has_completed_focus = GRE_fund_the_navy
+			}
+			
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_petros_voulgaris = {
+			
+			picture = generic_navy_europe_1
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+
+			
+			traits = { navy_chief_maneuver_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	high_command = {
+
+		GRE_braxnos_basileios = {
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			picture = generic_army_europe_1
+			
+			traits = { army_artillery_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	
+		GRE_melissinos_parasxos = {
+			
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			picture = GFX_GRE_melissinos_parasxos
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 2
+			}
+		}
+
+		GRE_nikos_beloyannis = {
+			
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			picture = generic_air_europe_2
+			
+			traits = { air_naval_strike_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_aristeidis_moraitinis = {
+			
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			picture = generic_air_europe_2
+			
+			traits = { air_bomber_interception_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		GRE_aekkea = {
+			
+			picture = idea_aekkea.dds
+
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			# trainers for RAF, great handling
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	naval_manufacturer = { 
+			
+		designer = yes
+		
+		royal_hellenic_naval_shipyard = {
+			
+			picture = generic_naval_manufacturer_1
+
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { naval_manufacturer }
+		}
+
+		GRE_neorion = {
+			
+			picture = idea_neorion.dds
+
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+	}
+
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		GRE_pyrkal = {
+			
+			allowed = {
+				original_TAG = GRE
+			}
+			
+			picture = idea_pyrkal.dds
+
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+    }
+
+    industrial_concern = {
+				
+		GRE_biamax = {
+			
+			allowed = {
+				original_TAG = GRE
+			}
+			
+			picture = idea_biamax
+
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+			
+			modifier = {
+			}
+		}
+	}
+}

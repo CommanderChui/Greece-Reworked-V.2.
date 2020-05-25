@@ -1,0 +1,5375 @@
+focus_tree = {
+	id = greek_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = GRE
+		}
+	}
+
+	default = no
+
+	focus = {
+		id = GRE_economic_recovery
+		icon = GFX_goal_generic_construct_civilian
+		text = GRE_economic_recovery
+		x = 0
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_industrial_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		text = GRE_industrial_effort
+		prerequisite = { focus = GRE_economic_recovery }
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				NOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+							is_on_continent = europe
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}				
+			}
+		}
+	}
+
+    focus = {
+		id = GRE_industrial_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		text = GRE_industrial_effort_2
+		prerequisite = { focus = GRE_industrial_effort }
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				NOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = arms_factory
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					arms_factory > 0
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					arms_factory > 0
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							arms_factory > 0
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							is_on_continent = europe
+						}
+					}					
+				}
+				random_owned_controlled_state = {
+					limit = {
+						arms_factory > 0
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						is_on_continent = europe
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						arms_factory > 0
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						is_on_continent = europe
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}			
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							is_on_continent = europe
+						}
+					}					
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}			
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		text = GRE_infrastructure_effort
+		prerequisite = { focus = GRE_industrial_effort }
+		prerequisite = { focus = GRE_end_the_depression }
+		x = 1
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_extra_tech_slot
+		icon = GFX_focus_research
+		text = GRE_extra_tech_slot
+		prerequisite = { focus = GRE_infrastructure_effort }
+		x = 1
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = GRE_further_development
+		icon = GFX_goal_generic_construct_civilian
+		text = GRE_further_development
+		prerequisite = { focus = GRE_extra_tech_slot }
+		x = 0
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_jobs_for_the_people
+		icon = GFX_focus_generic_industry_2
+		text = GRE_jobs_for_the_people
+		prerequisite = { focus = GRE_extra_tech_slot }
+		x = 2
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				NOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+							is_on_continent = europe
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}				
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_bullet_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		text = GRE_bullet_factories
+		prerequisite = { focus = GRE_extra_tech_slot }
+		x = 1
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				NOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							is_on_continent = europe
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}				
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_fight_depression
+		icon = GFX_goal_generic_political_pressure
+		text = GRE_fight_depression
+		x = 3
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+			    name = secret_bonus
+			    bonus = 1
+				uses = 2
+				category = electronics
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_end_the_depression
+		icon = GFX_goal_generic_demand_territory
+		text = GRE_end_the_depression
+        prerequisite = { focus = GRE_fight_depression }
+		x = 3
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			remove_ideas = depression
+		}
+	}
+
+	focus = {
+		id = GRE_naval_construction
+		icon = GFX_goal_generic_construct_naval_dockyard
+		text = GRE_naval_construction
+		prerequisite = { focus = GRE_end_the_depression }
+		x = 5
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}				
+			}
+
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 1
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_light_ship_effort
+		icon = GFX_focus_generic_cruiser2
+		text = GRE_light_ship_effort
+		prerequisite = { focus = GRE_naval_construction }
+		prerequisite = { focus = GRE_fund_the_navy }
+		x = 3
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				uses = 2
+				category = cl_tech
+			}
+	    }
+	}
+
+	focus = {
+		id = GRE_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		text = GRE_submarine_effort
+		prerequisite = { focus = GRE_light_ship_effort }
+		x = 3
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 0.5
+				uses = 2
+				technology = submarine_operations
+				technology = undersea_blockade
+				technology = convoy_interdiction
+				technology = submarine_offensive
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_naval_air_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		text = GRE_naval_air_effort
+		prerequisite = { focus = GRE_fighter_focus focus = GRE_cas_focus }
+		x = 13
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 25
+
+			add_tech_bonus = {
+				name = GRE_naval_air_effort
+				bonus = 0.5
+				uses = 1
+				technology = naval_bomber1
+				technology = naval_bomber2
+				technology = naval_bomber3
+			}
+		}
+	}
+
+
+	focus = {
+		id = GRE_heavy_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+        text = GRE_heavy_cruiser_effort
+		prerequisite = { focus = GRE_naval_construction }
+		prerequisite = { focus = GRE_fund_the_navy }
+		x = 11
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				uses = 2
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_carrier_focus
+		icon = GFX_goal_generic_navy_carrier
+		text = GRE_carrier_focus
+		prerequisite = { focus = GRE_heavy_cruiser_effort }
+		prerequisite = { focus = GRE_naval_air_effort }
+		mutually_exclusive = { focus = GRE_battleship_focus }
+		x = 12
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 0.25
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cv_bonus
+				bonus = 0.50
+				uses = 1
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_base_strike
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		text = GRE_base_strike
+		prerequisite = { focus = GRE_carrier_focus }
+		x = 12
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 2
+				technology = naval_bomber1
+				technology = naval_bomber2
+				technology = carrier_primacy
+				technology = carrier_task_forces
+				technology = floating_airfield_bs
+				technology = massed_strikes
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_battleship_focus
+		icon = GFX_goal_generic_navy_battleship
+		text = GRE_battleship_focus
+		prerequisite = { focus = GRE_heavy_cruiser_effort }
+		mutually_exclusive = { focus = GRE_carrier_focus }
+		x = 10
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bb_bonus
+				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_fleet_in_being
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		text = GRE_fleet_in_being
+		prerequisite = { focus = GRE_battleship_focus }
+		x = 10
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_the_final_plans
+		icon = GFX_goal_generic_construct_naval_dockyard
+		text = GRE_final_plans
+		prerequisite = { focus = GRE_base_strike focus = GRE_fleet_in_being }
+		x = 11
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}				
+			}
+		}
+	}
+
+	focus = {
+	    id = GRE_naval_way
+	    icon = GFX_goal_generic_improve_relations
+	    text = GRE_naval_way
+	    prerequisite = { focus = GRE_light_ship_effort }
+	    x = 4
+	    y = 5
+	    cost = 5
+	    ai_will_do = {
+	        factor = 3
+	    }
+
+	    available_if_capitulated = yes
+
+	    completion_reward = {
+	         navy_experience = 10
+	    }
+	}         
+
+	focus = {
+		id = GRE_bigger_navy
+		icon = GFX_goal_generic_build_navy
+		text = GRE_bigger_navy
+		prerequisite = { focus = GRE_naval_way }
+		mutually_exclusive = { focus = GRE_better_navy}
+		x = 3
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}				
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_better_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		text = GRE_better_navy
+		prerequisite = { focus = GRE_naval_way }
+		mutually_exclusive = { focus = GRE_bigger_navy }
+		x = 5
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 50
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 1
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+
+    focus = {
+		id = GRE_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		text = GRE_aviation_effort
+		prerequisite = { focus = GRE_open_different_plans }
+		x = 15
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}			
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}			
+		}
+
+		completion_reward = {
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+	    id = GRE_fund_the_navy
+	    icon = GFX_goal_generic_intelligence_exchange
+	    text = GRE_fund_the_navy
+	    x = 9
+	    y = 2
+	    cost = 10
+	    ai_will_do = {
+			factor = 6
+		}
+
+	    available_if_capitulated = yes
+
+	    completion_reward = {
+	        add_political_power = -15
+	        navy_experience = 10
+	        show_ideas_tooltip = GRE_alexandros_sakellariou
+	    }
+	}
+
+	focus = {
+	    id = GRE_divided_naval_industry
+	    icon = GFX_goal_generic_major_alliance
+	    text = GRE_divided_naval_industry
+	    prerequisite = { focus = GRE_naval_construction }
+	    prerequisite = { focus = GRE_fund_the_navy }
+	    x = 7
+	    y = 3
+	    cost = 10
+	    ai_will_do = {
+			factor = 6
+		}
+
+	    available_if_capitulated = yes
+
+	    completion_reward = {
+	        add_political_power = -5
+	        navy_experience = 5
+	    }
+	}
+
+	focus = {
+	    id = GRE_naval_arsenal
+	    icon = GFX_goal_generic_build_navy
+	    text = GRE_naval_arsenal
+	    prerequisite = { focus = GRE_divided_naval_industry }
+	    mutually_exclusive = { focus = GRE_civilian_shipbuilders }
+	    x = 6
+	    y = 4
+	    cost = 10
+	    ai_will_do = {
+			factor = 6
+		}
+
+	    available_if_capitulated = yes
+
+	    completion_reward = {
+	        navy_experience = 10
+	        add_ideas = GRE_naval_arsenal
+	        remove_ideas = GRE_divided_naval_industry_idea
+	    }
+	}  
+
+	focus = {
+	    id = GRE_civilian_shipbuilders
+	    icon = GFX_goal_generic_navy_cruiser
+	    text = GRE_civilian_shipbuilders
+	    prerequisite = { focus = GRE_divided_naval_industry }
+	    mutually_exclusive = { focus = GRE_naval_arsenal }
+	    x = 8
+	    y = 4
+	    cost = 10
+	    ai_will_do = {
+			factor = 3
+		}
+
+	    available_if_capitulated = yes
+
+	    completion_reward = {
+	        navy_experience = 10
+	        add_ideas = GRE_civilian_shipbuilders
+	        remove_ideas = GRE_divided_naval_industry_idea
+	    }
+	}
+
+	focus = {
+		id = GRE_focus_on_trade
+		icon = GFX_goal_generic_construct_naval_dockyard
+		text = GRE_focus_on_trade
+		prerequisite = { focus = GRE_civilian_shipbuilders }
+		x = 8
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+	    completion_reward = {
+			47 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = naval_base
+						province = 4109
+						level = 2
+						instant_build = yes
+					}
+					set_state_flag = FRA_navy_focus_2NB
+				}
+			}
+			731 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = naval_base
+						province = 11818
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}	
+	}
+
+	focus = {
+	    id = GRE_further_arsenal_plans
+	    icon = GFX_goal_generic_construct_naval_dockyard
+	    text = GRE_further_arsenal_plans
+	    prerequisite = { focus = GRE_naval_arsenal }
+	    x = 6
+	    y = 5
+	    cost = 10
+
+	    available_if_capitulated = yes
+
+	    completion_reward = {
+	        add_ideas = GRE_further_arsenal_plans
+	    }
+	}
+
+	focus = {
+	    id = GRE_collect_from_trade
+	    icon = GFX_goal_generic_consumer_goods
+	    text = GRE_collect_from_trade
+	    prerequisite = { focus = GRE_focus_on_trade }
+	    x = 8
+	    y = 6
+	    cost = 10
+
+	    available_if_capitulated = yes
+
+	    completion_reward = {
+	        add_ideas = GRE_collecting_from_trade
+	    }
+	}
+
+	focus = {
+		id = GRE_open_different_plans
+		icon = GFX_goal_generic_position_armies
+		text = GRE_open_different_plans
+		x = 17
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 10
+			army_experience = 15
+			navy_experience = 15
+			air_experience = 15
+		}
+	}
+
+	focus = {
+		id = GRE_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		text = GRE_fighter_focus
+		prerequisite = { focus = GRE_aviation_effort }
+		mutually_exclusive = { focus = GRE_cas_focus }
+		x = 14
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_cas_focus
+		icon = GFX_goal_generic_CAS
+		text = GRE_cas_focus
+		prerequisite = { focus = GRE_aviation_effort }
+		mutually_exclusive = { focus = GRE_fighter_focus }
+		x = 16
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cas_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		text = GRE_bomber_focus
+		prerequisite = { 
+		    focus = GRE_fighter_focus
+		    focus = GRE_cas_focus
+		}    
+		x = 15
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_further_air_plans
+		icon = GFX_goal_generic_air_doctrine
+		text = GRE_further_air_plans
+		prerequisite = { focus = GRE_fighter_focus focus = GRE_cas_focus }    
+		x = 17
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1
+				uses = 2
+				category = air_doctrine
+			}			
+		}
+	}
+
+	focus = {
+		id = GRE_army_reform
+		icon = GFX_goal_generic_allies_build_infantry
+		text = GRE_army_reform
+		prerequisite = { focus = GRE_open_different_plans }
+		x = 19
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+			    name = land_doctrine_bonus
+			    bonus = 1
+			    uses = 1
+			    category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_support_equipment
+		icon = GFX_goal_generic_cavalry
+		text = GRE_support_equipment
+		prerequisite = { focus = GRE_army_reform }
+		x = 18
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_bonus
+				bonus = 1
+				uses = 2
+				technology = tech_engineers
+				technology = tech_engineers2
+				technology = tech_recon
+				technology = tech_recon2
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_support_artillery
+		icon = GFX_goal_generic_army_artillery2
+		text = GRE_support_artillery
+		prerequisite = { focus = GRE_army_reform }
+		x = 20
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = arty_bonus
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_new_plans
+		icon = GFX_goal_generic_military_deal
+		text = GRE_new_plans
+		prerequisite = { focus = GRE_army_reform }
+		x = 19
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+			    name = land_doctrine_bonus
+			    bonus = 1
+			    uses = 1
+			    category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_land_doctrine
+		icon = GFX_goal_generic_military_deal
+		text = GRE_land_doctrine
+		prerequisite = { focus = GRE_new_plans }
+		x = 18
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_tech_bonus = {
+			    name = land_doctrine_bonus
+			    bonus = 1
+			    uses = 1
+			    category = land_doctrine
+			}    
+		}
+	}
+
+	focus = {
+		id = GRE_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		text = GRE_motorization_effort
+		prerequisite = { focus = GRE_land_doctrine }
+		x = 16
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GRE_motorized_effort
+		}
+	}
+
+	focus = {
+		id = GRE_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		text = GRE_mechanization_effort
+		prerequisite = { focus = GRE_motorization_effort }
+		x = 16
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		text = GRE_armor_effort
+		prerequisite = { focus = GRE_land_doctrine }
+		x = 18
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_med_armor_effort
+		icon = GFX_focus_generic_tank_production
+		text = GRE_med_armor_effort
+		prerequisite = { focus = GRE_armor_effort }
+		x = 18
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = med_armor_bonus
+			    bonus = 0.5
+				ahead_reduction = 1
+				technology = basic_medium_tank
+				technology = improved_medium_tank
+				technology = advanced_medium_tank
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_infantry_weapons
+		icon = GFX_goal_generic_small_arms
+		text = GRE_infantry_weapons
+		prerequisite = { focus = GRE_new_plans }
+		x = 20
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+            add_ideas = GRE_infantry_weapons 
+            add_ideas = GRE_pyrkal       
+		}
+	}
+
+	focus = {
+		id = GRE_special_forces
+		icon = GFX_goal_generic_special_forces
+		text = GRE_special_forces
+		prerequisite = { focus = GRE_infantry_weapons }
+		x = 20
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = GRE_special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+
+	### Political Tree ###
+
+	focus = {
+		id = GRE_political_awakening
+		icon = GFX_goal_generic_national_unity
+		text = GRE_political_awakening
+		x = 34
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = 10_GRE_tt
+		}
+	}
+
+	
+	focus = {
+	   id = GRE_divided_nation
+		icon = GFX_goal_generic_political_pressure
+       	text = GRE_divided_nation
+       	prerequisite = { focus = GRE_political_awakening }
+		x = 34
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+            has_country_flag = pmd_over
+        }
+    
+		completion_reward = {
+			add_political_power = 25
+			custom_effect_tooltip = 12_GRE_tt
+            hidden_effect = {
+            add_ideas = GRE_divided_nation
+			unlock_decision_tooltip = GRE_work_on_stability
+			unlock_decision_tooltip = GRE_work_on_economy
+			unlock_decision_tooltip = GRE_work_on_government
+			}
+		}
+	}
+    
+    focus = {
+		id = GRE_autarky_effort
+		icon = GFX_goal_generic_national_unity
+		text = GRE_autarky_effort
+		prerequisite = { focus = GRE_divided_nation }
+		mutually_exclusive = { focus = GRE_different_approach }
+		x = -8
+		y = 1
+		relative_position_id = GRE_divided_nation
+		cost = 5
+		ai_will_do = {
+			factor = 15
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = 13_GRE_tt
+			hidden_effect = {
+			    add_timed_idea = { idea = GRE_autarky_focus days = 360 }
+		    }
+		}
+	}
+
+	focus = {
+		id = GRE_national_union
+		icon = GFX_goal_support_fascism
+		text = GRE_national_union
+		prerequisite = { focus = GRE_autarky_effort }
+		mutually_exclusive = { focus = GRE_reinforce_4th_of_august_regime }
+		x = -2
+		y = 1
+		cost = 10
+		relative_position_id = GRE_autarky_effort
+		ai_will_do = {
+			factor = 6
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GRE_national_union
+			remove_ideas = GRE_divided_nation
+		}
+	}
+
+	focus = {
+		id = GRE_glorify_race
+		icon = GFX_goal_generic_demand_territory
+		text = GRE_glorify_race
+		prerequisite = { focus = GRE_national_union }
+		x = -2
+		y = 1
+		relative_position_id = GRE_national_union
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.1	
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_recruitment_focus
+		icon = GFX_focus_generic_little_entente
+		text = GRE_recruitment_focus
+		prerequisite = { focus = GRE_national_union }
+		x = 26
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GRE_recruitment_effort
+		}
+	}
+
+    focus = {
+		id = GRE_strategic_interests
+		icon = GFX_goal_generic_political_pressure
+		text = GRE_strategic_interests
+		prerequisite = { focus = GRE_national_union }
+		x = 24
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 30
+		}
+	}
+
+	focus = {
+		id = GRE_alliances
+		icon = GFX_goal_generic_propaganda
+		text = GRE_alliances
+		prerequisite = { focus = GRE_strategic_interests }
+		x = -1
+		y = 1
+		relative_position_id = GRE_strategic_interests
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 10
+			set_rule = {
+                can_create_factions = yes
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_befriend_italy
+		icon = GFX_goal_generic_military_deal
+		text = GRE_befriend_italy
+		prerequisite = { focus = GRE_alliances }
+		mutually_exclusive = { focus = GRE_reclaim_dodecanese }
+		x = 0
+		y = 1
+		relative_position_id = GRE_alliances
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_opinion_modifier = { target = ITA modifier = medium_increase }
+			ITA = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+			diplomatic_relation = {
+			    country = ITA
+			    relation = non_aggression_pact
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_befriend_germany
+		icon = GFX_goal_generic_military_deal
+		text = GRE_befriend_germany
+		prerequisite = { focus = GRE_alliances }
+		x = -2
+		y = 1
+		relative_position_id = GRE_alliances
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_opinion_modifier = { target = GER modifier = medium_increase }
+			GER = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+			diplomatic_relation = {
+			    country = GER
+			    relation = non_aggression_pact
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_join_the_axis
+		icon = GFX_goal_molotov_ribbentrop_pact
+		text = GRE_join_the_axis
+		prerequisite = { focus = GRE_befriend_germany }
+		x = 0
+		y = 1
+		relative_position_id = GRE_befriend_germany
+		cost = 2
+		ai_will_do = {
+			factor = 12
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			GER = { country_event = greatergreece.28 }
+		}
+	}
+
+	focus = {
+		id = GRE_expansionism
+		icon = GFX_goal_generic_more_territorial_claims
+		text = GRE_expansionism
+		prerequisite = { focus = GRE_strategic_interests }
+		x = 1
+		y = 1
+		relative_position_id = GRE_strategic_interests
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+		available = {
+			is_puppet = no
+			has_government = fascism
+			has_war = no
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.05
+			add_political_power = 30
+		}
+	}
+
+	focus = {
+		id = GRE_reclaim_dodecanese
+		icon = GFX_goal_demand_sudetenland
+    	text = GRE_reclaim_dodecanese
+		prerequisite = { focus = GRE_expansionism }
+	    mutually_exclusive = { focus = GRE_befriend_italy }
+		x = 0
+		y = 1
+		relative_position_id = GRE_expansionism
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_army_manpower = { size > 200000 }
+			OR = {
+				NOT = { ITA = { is_in_faction_with = GRE } }
+			}
+		}
+
+      	completion_reward = {
+			ITA = { country_event = greatergreece.29 }
+		}
+	}
+
+	focus = {
+		id = GRE_rival_britain
+		icon = GFX_goal_generic_attack_allies
+    	text = GRE_rival_britain
+		prerequisite = { focus = GRE_expansionism }
+		x = 2
+		y = 1
+		relative_position_id = GRE_expansionism
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+    
+		available_if_capitulated = yes
+
+
+      	completion_reward = {
+			add_opinion_modifier = { target = ENG modifier = small_decrease }
+			ENG = { add_opinion_modifier = { target = GRE modifier = small_decrease } }
+		}
+	}
+
+	focus = {
+		id = GRE_enosis
+		icon = GFX_goal_generic_territory_or_war
+    	text = GRE_enosis
+		prerequisite = { focus = GRE_rival_britain }
+		x = 0
+		y = 2
+		relative_position_id = GRE_rival_britain
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_army_manpower = { size > 200000 }
+			OR = {
+				NOT = { ENG = { is_in_faction_with = GRE } }
+			}
+		}
+
+      	completion_reward = {
+			ENG = { country_event = greatergreece.25 }
+			add_state_core = 183
+		}
+	}
+
+	focus = {
+		id = GRE_megali_idea
+		icon = GFX_goal_generic_territory_or_war
+    	text = GRE_megali_idea
+		prerequisite = { focus = GRE_expansionism }
+		x = 1
+		y = 2
+		relative_position_id = GRE_expansionism
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_army_manpower = { size > 200000 }
+			OR = {
+				NOT = { TUR = { is_in_faction_with = GRE } }
+			}
+		}
+
+      	completion_reward = {
+			TUR = { country_event = greatergreece.30 }
+			add_state_claim = 339
+			add_state_claim = 340
+			add_state_claim = 347
+		}
+	}
+
+	focus = {
+		id = GRE_reinforce_4th_of_august_regime
+		icon = GFX_focus_GRE_metaxas
+    	text = GRE_reinforce_4th_of_august_regime
+		prerequisite = { focus = GRE_autarky_effort }
+		mutually_exclusive = { focus = GRE_national_union }
+		x = 6
+		y = 1
+		relative_position_id = GRE_autarky_effort
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+
+		available = {
+            has_country_flag = GRE_metaxas_coup
+        }
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+			remove_ideas = GRE_divided_nation
+			custom_effect_tooltip = 11_GRE_tt
+		}
+	}
+
+	focus = {
+		id = GRE_begin_reconstruction
+		icon = GFX_goal_generic_demand_territory
+    	text = GRE_begin_reconstruction
+		prerequisite = { focus = GRE_reinforce_4th_of_august_regime }
+		x = -2
+		y = 1
+		relative_position_id = GRE_reinforce_4th_of_august_regime
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_improve_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		text = GRE_improve_roads
+		prerequisite = { focus = GRE_begin_reconstruction }
+		x = -1
+		y = 2
+		relative_position_id = GRE_begin_reconstruction
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_metaxas_industry
+		icon = GFX_focus_generic_industry_2
+		text = GRE_metaxas_industry
+		prerequisite = { focus = GRE_begin_reconstruction }
+		x = 1
+		y = 2
+		cost = 10
+		relative_position_id = GRE_begin_reconstruction
+		ai_will_do = {
+			factor = 3
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				NOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_stability = 0.02
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_metaxas_bullet_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		text = GRE_metaxas_bullet_industry
+		prerequisite = { focus = GRE_begin_reconstruction }
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = GRE_begin_reconstruction
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				NOT = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = arms_factory
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					arms_factory > 0
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					arms_factory > 0
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							arms_factory > 0
+							free_building_slots = {
+								building = arms_factory
+								size > 1
+								include_locked = yes
+							}
+							is_on_continent = europe
+						}
+					}					
+				}
+				random_owned_controlled_state = {
+					limit = {
+						arms_factory > 0
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						is_on_continent = europe
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						arms_factory > 0
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						is_on_continent = europe
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}			
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_create_the_IKA
+		icon = GFX_goal_generic_national_unity
+    	text = GRE_create_the_IKA
+		prerequisite = { focus = GRE_improve_roads }
+		prerequisite = { focus = GRE_metaxas_bullet_industry}
+		prerequisite = { focus = GRE_metaxas_industry}
+		x = 0
+		y = 2
+		relative_position_id = GRE_metaxas_bullet_industry
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			add_stability = 0.1
+			add_ideas = GRE_IKA
+		}
+	}
+
+	focus = {
+		id = GRE_political_opposition
+		icon = GFX_goal_generic_forceful_treaty
+    	text = GRE_political_opposition
+		prerequisite = { focus = GRE_reinforce_4th_of_august_regime }
+		x = 0
+		y = 1
+		relative_position_id = GRE_reinforce_4th_of_august_regime
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			custom_effect_tooltip = 8_GRE_tt
+			hidden_effect = {
+			    add_stability = -0.05
+			    add_war_support = -0.02
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_dominant_ideology
+		icon = GFX_goal_generic_political_pressure
+    	text = GRE_dominant_ideology
+		prerequisite = { focus = GRE_political_opposition }
+		x = 0
+		y = 1
+		relative_position_id = GRE_political_opposition
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			add_ideas = GRE_dominant_ideology
+		}
+	}
+
+	focus = {
+		id = GRE_embrace_metaxism
+		icon = GFX_goal_generic_neutrality_focus
+    	text = GRE_embrace_metaxism
+		prerequisite = { focus = GRE_reinforce_4th_of_august_regime }
+		x = 3
+		y = 1
+		relative_position_id = GRE_reinforce_4th_of_august_regime
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_stability = 0.05
+			add_ideas = neutrality_idea
+		}
+	}
+
+	focus = {
+		id = GRE_metaxa_militarism
+		icon = GFX_focus_chi_army_reform
+    	text = GRE_metaxa_militarism
+		prerequisite = { focus = GRE_embrace_metaxism }
+		x = -1
+		y = 1
+		relative_position_id = GRE_embrace_metaxism
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 30
+			set_country_flag = metaxa_militarism_flag
+			add_ideas = GRE_coup_plot
+		}
+	}
+
+	focus = {
+		id = GRE_create_EON
+		icon = GFX_focus_GRE_EON
+    	text = GRE_create_EON
+		prerequisite = { focus = GRE_metaxa_militarism }
+		x = 1
+		y = 1
+		relative_position_id = GRE_metaxa_militarism
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			add_ideas = GRE_national_youth_organisation
+		}
+	}
+
+	focus = {
+		id = GRE_military_teachings
+		icon = GFX_focus_generic_military_academy
+    	text = GRE_military_teachings
+		prerequisite = { focus = GRE_metaxa_militarism }
+		x = -1
+		y = 1
+		relative_position_id = GRE_metaxa_militarism
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			army_experience = 50
+			add_war_support = 0.1
+			add_ideas = GRE_military_academy
+		}
+	}
+
+	focus = {
+		id = GRE_metaxas_line
+		icon = GFX_goal_generic_fortify_city
+    	text = GRE_metaxas_line
+		prerequisite = { focus = GRE_military_teachings }
+		prerequisite = { focus = GRE_create_EON }
+		x = 0
+		y = 2
+		relative_position_id = GRE_metaxa_militarism
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {			
+			add_political_power = -100
+			add_timed_idea = { idea = GRE_metaxas_line_costs days = 100 }
+			731 = {
+			   if = { 
+			        limit = { is_controlled_by = GRE }
+			            add_building_construction = {
+				            type = bunker
+				            level = 3
+				            province = 3526
+				            instant_build = yes
+			            }
+			            add_building_construction = {
+				            type = bunker
+				            level = 3
+				            province = 6990
+				            instant_build = yes
+			            }
+			    }
+			}
+			184 = {
+			    if = { 
+			        limit = { is_controlled_by = GRE }
+			            add_building_construction = {
+				            type = bunker
+				            level = 2
+				            province = 9791
+				            instant_build = yes
+			            }
+			            add_building_construction = {
+				            type = bunker
+				            level = 2
+				            province = 11774
+				            instant_build = yes
+			            }
+			            add_building_construction = {
+				            type = bunker
+				            level = 2
+				            province = 11905
+				            instant_build = yes
+			            }
+	            }
+	        }
+	    }
+	}
+
+	focus = {
+		id = GRE_world_stage
+		icon = GFX_focus_generic_diplomatic_treaty
+    	text = GRE_world_stage
+		prerequisite = { focus = GRE_embrace_metaxism }
+		x = 2
+		y = 1
+		relative_position_id = GRE_embrace_metaxism
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			add_political_power = 30
+		}
+	}
+
+	focus = {
+		id = GRE_mussolini_state
+		icon = GFX_focus_generic_italy_first
+    	text = GRE_mussolini_state
+		prerequisite = { focus = GRE_world_stage }
+		x = 0
+		y = 1
+		relative_position_id = GRE_world_stage
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+
+		    }
+		}
+
+      	completion_reward = {
+			add_opinion_modifier = { target = ITA modifier = medium_increase }
+			ITA = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+		}
+	}
+
+	focus = {
+		id = GRE_national_schism
+		icon = GFX_goal_generic_attack_allies
+    	text = GRE_national_schism
+		prerequisite = { focus = GRE_world_stage }
+		x = 2
+		y = 1
+		relative_position_id = GRE_world_stage
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			add_political_power = -50
+			add_stability = -0.1
+			add_war_support = -0.1
+		}
+	}
+
+	focus = {
+		id = GRE_favoring_britain
+		icon = GFX_focus_chi_british_cooperation
+    	text = GRE_favoring_britain
+		prerequisite = { focus = GRE_national_schism }
+		mutually_exclusive = { focus = GRE_favoring_germany }
+		x = -1
+		y = 1
+		relative_position_id = GRE_national_schism
+		cost = 5
+		ai_will_do = {
+			factor = 9
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		        has_war_with = ENG
+		    }
+		}
+
+      	completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_opinion_modifier = { target = ENG modifier = medium_increase }
+			ENG = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+			ENG = {
+			    diplomatic_relation = {
+                    country = GRE
+                    relation = guarantee
+                    active = yes
+                }
+			}
+			set_country_flag = fovring_britain_flag
+		}
+	}
+
+	focus = {
+		id = GRE_favoring_germany
+		icon = GFX_focus_chi_mission_to_germany
+    	text = GRE_favoring_germany
+		prerequisite = { focus = GRE_national_schism }
+		mutually_exclusive = { focus = GRE_favoring_britain }
+		x = 1
+		y = 1
+		relative_position_id = GRE_national_schism
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		        has_war_with = GER
+		    }
+		}
+
+      	completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_opinion_modifier = { target = GER modifier = medium_increase }
+			GER = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+			GER = {
+			    diplomatic_relation = {
+                    country = GRE
+                    relation = guarantee
+                    active = yes
+                }
+			}
+			set_country_flag = fovring_germany_flag
+		}
+	}
+
+	focus = {
+		id = GRE_third_hellenic_civilization
+		icon = GFX_goal_generic_demand_territory
+    	text = GRE_third_hellenic_civilization
+		prerequisite = { focus = GRE_create_the_IKA }
+		prerequisite = { focus = GRE_metaxas_line }
+		prerequisite = { focus = GRE_favoring_germany focus = GRE_favoring_britain }
+		x = 0
+		y = 1
+		relative_position_id = GRE_metaxas_line
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_country_flag = junta_established
+		    }
+		}
+
+      	completion_reward = {
+			add_political_power = 150
+			set_major = yes
+		}
+	}
+
+	focus = {
+		id = GRE_different_approach
+		icon = GFX_goal_generic_propaganda
+    	text = GRE_different_approach
+		prerequisite = { focus = GRE_divided_nation }
+		mutually_exclusive = { focus = GRE_autarky_effort }
+		x = 13
+		y = 1
+		relative_position_id = GRE_divided_nation
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			custom_effect_tooltip = 14_GRE_tt
+			hidden_effect = {
+			    add_timed_idea = { idea = GRE_different_approach days = 360 }
+		    }
+		}
+	}
+
+	focus = {
+		id = GRE_democratic_approach
+		icon = GFX_goal_support_democracy
+    	text = GRE_democratic_approach
+		prerequisite = { focus = GRE_different_approach }
+		mutually_exclusive = { focus = GRE_communist_aproach_focus }
+		x = -1
+		y = 1
+		relative_position_id = GRE_different_approach
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_timed_idea = { idea = GRE_democratic_support days = 360 }
+		}
+	}
+
+	focus = {
+		id = GRE_internal_affairs
+		icon = GFX_goal_generic_propaganda
+    	text = GRE_internal_affairs
+		prerequisite = { focus = GRE_democratic_approach }
+		x = 0
+		y = 1
+		relative_position_id = GRE_democratic_approach
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_ensure_stability
+		icon = GFX_goal_generic_neutrality_focus
+    	text = GRE_ensure_stability
+		prerequisite = { focus = GRE_internal_affairs }
+		x = 0
+		y = 2
+		relative_position_id = GRE_democratic_approach
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			remove_ideas = GRE_divided_nation
+		}
+	}
+
+	focus = {
+		id = GRE_expand_ministerial_council
+		icon = GFX_goal_generic_intelligence_exchange
+    	text = GRE_expand_ministerial_council
+		prerequisite = { focus = GRE_internal_affairs }
+		x = -1
+		y = 3
+		relative_position_id = GRE_democratic_approach
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_ideas = GRE_expand_ministries
+		}
+	}
+
+	focus = {
+		id = GRE_denounce_metaxism
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+    	text = GRE_denounce_metaxism
+		prerequisite = { focus = GRE_internal_affairs }
+		x = 1
+		y = 3
+		relative_position_id = GRE_democratic_approach
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_popularity = { ideology = neutrality popularity = -0.1 }
+		}
+	}
+
+	focus = {
+		id = GRE_democratic_economic_policy
+		icon = GFX_goal_generic_consumer_goods
+    	text = GRE_democratic_economic_policy
+		prerequisite = { focus = GRE_democratic_approach }
+		x = -3
+		y = 1
+		relative_position_id = GRE_democratic_approach
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 50
+			add_ideas = GRE_dem_economic_reform
+		}
+	}
+
+	focus = {
+		id = GRE_foreign_investments
+		icon = GFX_goal_generic_construct_civ_factory
+    	text = GRE_foreign_investments
+		prerequisite = { focus = GRE_democratic_economic_policy }
+		x = -1
+		y = 1
+		relative_position_id = GRE_democratic_economic_policy
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_stability = -0.05
+			add_timed_idea = { idea = GRE_foreign_investments days = 360 }
+		}
+	}
+
+	focus = {
+		id = GRE_welfare_state
+		icon = GFX_focus_generic_concessions
+    	text = GRE_welfare_state
+		prerequisite = { focus = GRE_democratic_economic_policy }
+		x = 1
+		y = 1
+		relative_position_id = GRE_democratic_economic_policy
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_ideas = { GRE_welfare_state }
+		}
+	}
+
+	focus = {
+		id = GRE_dem_region_wide_development
+		icon = GFX_focus_generic_the_giant_wakes
+    	text = GRE_dem_region_wide_development
+		prerequisite = { focus = GRE_democratic_economic_policy }
+		x = 0
+		y = 2
+		relative_position_id = GRE_democratic_economic_policy
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+							is_on_continent = europe
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}				
+			}
+		}	
+	}
+
+	focus = {
+		id = GRE_subsidize_research
+		icon = GFX_goal_generic_scientific_exchange
+    	text = GRE_subsidize_research
+		prerequisite = { focus = GRE_dem_region_wide_development }
+		x = 0
+		y = 1
+		relative_position_id = GRE_dem_region_wide_development
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_research_slot = 1
+			add_ideas = { GRE_research_cost }
+		}
+	}
+
+	focus = {
+		id = GRE_diplomatic_actions
+		icon = GFX_goal_generic_improve_relations
+    	text = GRE_diplomatic_actions
+		prerequisite = { focus = GRE_democratic_approach }
+		x = 3
+		y = 1
+		relative_position_id = GRE_democratic_approach
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 50
+			add_ideas = GRE_Philhellenism
+		}
+	}
+
+    focus = {
+		id = GRE_befriend_france
+		icon = GFX_focus_chi_reach_out_to_france
+    	text = GRE_befriend_france
+		prerequisite = { focus = GRE_diplomatic_actions }
+		x = 1
+		y = 1
+		relative_position_id = GRE_diplomatic_actions
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_opinion_modifier = { target = FRA modifier = medium_increase }
+			FRA = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+		}
+	}
+
+	focus = {
+		id = GRE_french_innovations
+		icon = GFX_goal_generic_positive_trade_relations
+    	text = GRE_french_innovations
+		prerequisite = { focus = GRE_befriend_france }
+		x = 1
+		y = 1
+		relative_position_id = GRE_befriend_france
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_government = democratic
+		}
+
+      	completion_reward = {
+			add_stability = 0.02
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_befriend_britain
+		icon = GFX_focus_chi_british_cooperation
+    	text = GRE_befriend_britain
+		prerequisite = { focus = GRE_befriend_france }
+		x = 0
+		y = 2
+		relative_position_id = GRE_befriend_france
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_opinion_modifier = { target = ENG modifier = medium_increase }
+			ENG = { add_opinion_modifier = { target = GRE modifier = medium_increase } }			
+		}
+	}
+
+	focus = {
+		id = GRE_british_innovetions
+		icon = GFX_goal_generic_positive_trade_relations
+    	text = GRE_british_innovetions
+		prerequisite = { focus = GRE_befriend_britain }
+		x = 1
+		y = 3
+		relative_position_id = GRE_befriend_france
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_government = democratic
+		}
+
+      	completion_reward = {
+			navy_experience = 5
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_rival_germany
+		icon = GFX_goal_generic_forceful_treaty
+    	text = GRE_rival_germany
+		prerequisite = { focus = GRE_diplomatic_actions }
+		x = -2
+		y = 0
+		relative_position_id = GRE_befriend_france
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+    
+		available_if_capitulated = yes
+
+		bypass = {
+		    NOT = {
+                GER = {
+			        has_government = fascism
+			    }
+		    }
+		}
+
+      	completion_reward = {
+			add_opinion_modifier = { target = GER modifier = large_decrease }
+			GER = { add_opinion_modifier = { target = GRE modifier = large_decrease } }
+		}
+	}
+
+	focus = {
+		id = GRE_rival_italy
+		icon = GFX_goal_generic_forceful_treaty
+    	text = GRE_rival_italy
+		prerequisite = { focus = GRE_rival_germany }
+		x = -2
+		y = 0
+		relative_position_id = GRE_befriend_britain
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+    
+		available_if_capitulated = yes
+
+		bypass = {
+		    NOT = {
+			    ITA = {
+			        has_government = fascism
+			    }
+		    }
+		}
+
+      	completion_reward = {
+			add_opinion_modifier = { target = ITA modifier = large_decrease }
+			ITA = { add_opinion_modifier = { target = GRE modifier = large_decrease } }
+		}
+	}
+
+	focus = {
+		id = GRE_allied_membership
+		icon = GFX_goal_generic_alliance
+    	text = GRE_allied_membership
+		prerequisite = { focus = GRE_rival_italy }
+        prerequisite = { focus = GRE_befriend_britain }
+        mutually_exclusive = { focus = GRE_surprise_attack_italy }
+		x = -1
+		y = 1
+		relative_position_id = GRE_befriend_britain
+		cost = 2
+		ai_will_do = {
+			factor = 12
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_government = democratic
+		}
+
+      	completion_reward = {
+			ENG = { country_event = greatergreece.26 }
+		}
+	}
+
+	focus = {
+		id = GRE_military_reforms
+		icon = GFX_goal_generic_defence
+    	text = GRE_military_reforms
+		prerequisite = { focus = GRE_ensure_stability }
+        prerequisite = { focus = GRE_denounce_metaxism }
+        prerequisite = { focus = GRE_expand_ministerial_council }
+		x = 0
+		y = 3
+		relative_position_id = GRE_internal_affairs
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GRE_city_defenses
+		icon = GFX_goal_generic_fortify_city
+    	text = GRE_city_defenses
+		prerequisite = { focus = GRE_military_reforms }
+		x = -1
+		y = 1
+		relative_position_id = GRE_military_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			47 = {
+			   add_building_construction = {
+				   type = bunker
+				   level = 2
+				   province = 4109
+				   instant_build = yes
+			    }
+			    add_building_construction = {
+				    type = coastal_bunker
+				    level = 2
+				    province = 4109
+				    instant_build = yes
+			    }
+			}
+			731 = {
+			   add_building_construction = {
+				   type = bunker
+				   level = 2
+				   province = 11818
+				   instant_build = yes
+			    }
+			    add_building_construction = {
+				    type = coastal_bunker
+				    level = 2
+				    province = 11818
+				    instant_build = yes
+			    }
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_defend_liberty
+		icon = GFX_focus_secret_rearmament
+    	text = GRE_defend_liberty
+		prerequisite = { focus = GRE_military_reforms }
+		x = 1
+		y = 1
+		relative_position_id = GRE_city_defenses
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = { 
+			OR = { 
+				threat > 0.5
+				has_defensive_war = yes 
+			}
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			add_ideas = GRE_dem_recruitment
+		}
+	}
+
+	focus = {
+		id = GRE_surprise_attack_italy
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+    	text = GRE_surprise_attack_italy
+		prerequisite = { focus = GRE_military_reforms }
+		prerequisite = { focus = GRE_rival_italy }
+		mutually_exclusive = { focus = GRE_allied_membership }
+		x = 1
+		y = 1
+		relative_position_id = GRE_military_reforms
+		cost = 2
+		ai_will_do = {
+			factor = 9
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_army_manpower = { size > 200000 }
+			OR = {
+				NOT = { ITA = { is_in_faction_with = GRE } }
+			}
+			ITA = {
+			    has_war = yes
+			}
+			GRE = {
+			    has_war = no
+			}
+		}
+
+      	completion_reward = {
+			declare_war_on = { target = ITA type = annex_everything }
+		}
+	}
+
+	focus = {
+		id = GRE_ask_for_cyprus
+		icon = GFX_focus_generic_treaty
+    	text = GRE_ask_for_cyprus
+		prerequisite = { focus = GRE_allied_membership }
+		x = -1
+		y = 2
+		relative_position_id = GRE_befriend_britain
+		cost = 2
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+		    is_in_faction_with = ENG
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			ENG = { country_event = greatergreece.27 }
+		}
+	}
+
+	focus = {
+        id = GRE_communist_aproach_focus
+        icon = GFX_goal_support_communism
+        prerequisite = { focus = GRE_different_approach}
+        mutually_exclusive = { focus = GRE_democratic_approach}
+        available = { 
+            else = {
+                OR = {
+                    NOT = {  
+                        has_government = fascism
+                    }
+                }
+            }
+        }
+        x = 8
+        y = 1
+        relative_position_id = GRE_different_approach
+        cost = 10
+        ai_will_do = {
+			factor = 2
+		}
+
+        available_if_capitulated = no
+
+
+        ai_will_do = {
+            modifier = {
+                factor = 0
+                AND = {
+                    is_historical_focus_on = yes
+                    NOT = { has_government = communism }
+                }
+            }
+        }
+
+        completion_reward = {
+            add_timed_idea = { idea = internationalism days = 360 }
+            remove_ideas = GRE_divided_nation
+        }
+    }
+    
+
+    focus = {
+		id = GRE_communist_reforms
+		icon = GFX_goal_generic_forceful_treaty
+    	text = GRE_communist_reforms
+		prerequisite = { focus = GRE_communist_aproach_focus }
+		x = 3
+		y = 1
+		relative_position_id = GRE_communist_aproach_focus
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_communist_economic_reforms
+		icon = GFX_goal_generic_soviet_construction
+    	text = GRE_communist_economic_reforms
+		prerequisite = { focus = GRE_communist_reforms }
+		x = 2
+		y = 1
+		relative_position_id = GRE_communist_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_stability = 0.05
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_communist_civ_factories
+		icon = GFX_goal_generic_construction
+    	text = GRE_communist_civ_factories
+		prerequisite = { focus = GRE_communist_economic_reforms }
+		x = 1
+		y = 1
+		relative_position_id = GRE_communist_economic_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			random_owned_controlled_state = {
+			    add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			    }
+			}
+			random_owned_controlled_state = {
+			    add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			    }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+							is_on_continent = europe
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_communist_control_the_banks
+		icon = GFX_focus_generic_soviet_politics
+    	text = GRE_communist_control_the_banks
+		prerequisite = { focus = GRE_communist_economic_reforms }
+		x = -1
+		y = 1
+		relative_position_id = GRE_communist_economic_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_ideas = GRE_control_the_banks
+		}
+	}
+
+	focus = {
+		id = GRE_communist_support_the_little_worker
+		icon = GFX_focus_YUG_pan_slavic_congress
+    	text = GRE_communist_support_the_little_worker
+		prerequisite = { focus = GRE_communist_control_the_banks }
+		prerequisite = { focus = GRE_communist_civ_factories }
+		x = 1
+		y = 1
+		relative_position_id = GRE_communist_control_the_banks
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_stability = 0.05
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GRE_communist_purge_opposition
+		icon = GFX_goal_generic_political_pressure
+    	text = GRE_communist_purge_opposition
+		prerequisite = { focus = GRE_communist_reforms }
+		x = -1
+		y = 1
+		relative_position_id = GRE_communist_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 50
+			add_popularity = { ideology = communism popularity = 0.25 }
+		}
+	}
+
+	focus = {
+		id = GRE_communist_destroy_fascism
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+    	text = GRE_communist_destroy_fascism
+		prerequisite = { focus = GRE_communist_purge_opposition }
+		x = 0
+		y = 1
+		relative_position_id = GRE_communist_purge_opposition
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_ideas = GRE_destroy_fascism
+		}
+	}
+
+	focus = {
+		id = GRE_internationalism
+		icon = GFX_goal_tripartite_pact
+    	text = GRE_internationalism
+		prerequisite = { focus = GRE_communist_aproach_focus }
+		x = -1
+		y = 1
+		relative_position_id = GRE_communist_aproach_focus
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GRE_communist_our_own_faction
+		icon = GFX_goal_generic_war_with_comintern
+    	text = GRE_communist_our_own_faction
+		prerequisite = { focus = GRE_internationalism }
+		mutually_exclusive = { focus = GRE_support_the_soviets }
+		x = -1
+		y = 1
+		relative_position_id = GRE_internationalism
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			set_rule = { can_create_factions = yes }
+		}
+	}
+
+	focus = {
+		id = GRE_support_the_soviets
+		icon = GFX_goal_generic_dangerous_deal
+    	text = GRE_support_the_soviets
+		prerequisite = { focus = GRE_internationalism }
+		mutually_exclusive = { focus = GRE_communist_our_own_faction }
+		x = 1
+		y = 1
+		relative_position_id = GRE_internationalism
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			SOV = { country_event = greatergreece.31 }
+		}
+	}
+
+	focus = {
+		id = GRE_denounce_fascist_countries
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+    	text = GRE_denounce_fascist_countries
+		prerequisite = { focus = GRE_support_the_soviets focus = GRE_communist_our_own_faction }
+		x = 1
+		y = 1
+		relative_position_id = GRE_communist_our_own_faction
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+		bypass = {
+		    NOT = {
+                GER = {
+			        has_government = fascism
+			    }
+			    ITA = {
+			        has_government = fascism
+			    }
+		    }
+		}
+
+      	completion_reward = {
+            add_opinion_modifier = { target = GER modifier = medium_decrease }
+		    GER = { add_opinion_modifier = { target = GRE modifier = medium_decrease } }
+		    add_opinion_modifier = { target = ITA modifier = medium_decrease }
+		    ITA = { add_opinion_modifier = { target = GRE modifier = medium_decrease } } 
+		}
+	}
+
+	focus = {
+		id = GRE_total_control_of_state
+		icon = GFX_goal_demand_sudetenland
+    	text = GRE_total_control_of_state
+		prerequisite = { focus = GRE_denounce_fascist_countries }
+		prerequisite = { focus = GRE_communist_destroy_fascism }
+		x = 2
+		y = 1
+		relative_position_id = GRE_denounce_fascist_countries
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+            add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GRE_red_dawn
+		icon = GFX_goal_generic_propaganda
+    	text = GRE_red_dawn
+		prerequisite = { focus = GRE_total_control_of_state }
+		prerequisite = { focus = GRE_communist_support_the_little_worker }
+		x = 2
+		y = 1
+		relative_position_id = GRE_total_control_of_state
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+            add_stability = 0.1
+            add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GRE_communist_masterminds
+		icon = GFX_focus_generic_socialist_science
+    	text = GRE_communist_masterminds
+		prerequisite = { focus = GRE_red_dawn }
+		x = -1
+		y = 1
+		relative_position_id = GRE_red_dawn
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+            add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = GRE_socialist_army_control
+		icon = GFX_goal_generic_military_sphere
+    	text = GRE_socialist_army_control
+		prerequisite = { focus = GRE_red_dawn }
+		x = 1
+		y = 1
+		relative_position_id = GRE_red_dawn
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+            army_experience = 25
+            add_war_support = 0.1
+            create_corps_commander = {
+	            name = "Stefanos Sarafis"
+	            gfx = "stefanossarafis.dds"
+	            traits = { infantry_officer hill_fighter defensive_doctrine }
+	            skill = 2
+	            attack_skill = 1
+	            defense_skill = 2
+	            planning_skill = 3
+	            logistics_skill = 3
+            }
+		}
+	}
+
+	focus = {
+		id = GRE_destroy_coup_plots
+		icon = GFX_goal_generic_attack_allies
+    	text = GRE_destroy_coup_plots
+    	mutually_exclusive = { focus = GRE_attempt_military_coup }
+		x = -3
+		y = 2
+		relative_position_id = GRE_third_hellenic_civilization
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_country_flag = metaxa_militarism_flag
+		}
+
+      	completion_reward = {
+			remove_ideas = GRE_coup_plot
+			add_popularity = { ideology = neutrality popularity = 0.1 }
+		}
+	}
+
+	focus = {
+		id = GRE_attempt_military_coup
+		icon = GFX_focus_generic_military_mission
+    	text = GRE_attempt_military_coup
+    	mutually_exclusive = { focus = GRE_destroy_coup_plots }
+		x = -1
+		y = 2
+		relative_position_id = GRE_third_hellenic_civilization
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    has_country_flag = metaxa_militarism_flag
+		}
+
+      	completion_reward = {
+			country_event = greatergreece.14
+			set_country_flag = junta_established
+			remove_ideas = GRE_coup_plot
+			add_popularity = { ideology = fascism popularity = 0.1 }
+			add_popularity = { ideology = communism popularity = 0.1 }
+		}
+	}
+
+	focus = {
+		id = GRE_establish_junta
+		icon = GFX_goal_generic_political_pressure
+    	text = GRE_establish_junta
+    	prerequisite = { focus = GRE_attempt_military_coup }
+		x = -3
+		y = 1
+		relative_position_id = GRE_attempt_military_coup
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+
+      	completion_reward = {
+			add_stability = -0.05
+			add_political_power = 100
+			remove_ideas = GRE_dominant_ideology
+		}
+	}
+
+	focus = {
+		id = GRE_junta_industrial_reconstruction
+		icon = GFX_goal_generic_construction2
+    	text = GRE_junta_industrial_reconstruction
+    	prerequisite = { focus = GRE_establish_junta }
+		x = -2
+		y = 1
+		relative_position_id = GRE_establish_junta
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_junta_industrial_reconstruction_2
+		icon = GFX_focus_generic_industry_2
+    	text = GRE_junta_industrial_reconstruction_2
+    	prerequisite = { focus = GRE_junta_industrial_reconstruction }
+		x = -1
+		y = 1
+		relative_position_id = GRE_junta_industrial_reconstruction
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_stability = 0.02
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_junta_industrial_reconstruction_3
+		icon = GFX_goal_generic_construct_mil_factory
+    	text = GRE_junta_industrial_reconstruction_3
+    	prerequisite = { focus = GRE_junta_industrial_reconstruction }
+		x = 1
+		y = 1
+		relative_position_id = GRE_junta_industrial_reconstruction
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_stability = 0.02
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					is_on_continent = europe
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_junta_forced_conscription
+		icon = GFX_focus_generic_little_entente
+    	text = GRE_junta_forced_conscription
+    	prerequisite = { focus = GRE_establish_junta }
+		x = 0
+		y = 1
+		relative_position_id = GRE_establish_junta
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_ideas = GRE_recruitment_effort
+			hidden_effect = {
+			    remove_ideas = GRE_national_youth_organisation
+			}
+			add_popularity = { ideology = communism popularity = 0.1 }
+		}
+	}
+
+	focus = {
+		id = GRE_junta_national_unrest
+		icon = GFX_goal_generic_neutrality_focus
+    	text = GRE_junta_national_unrest
+    	prerequisite = { focus = GRE_establish_junta }
+		x = 2
+		y = 1
+		relative_position_id = GRE_establish_junta
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_junta_blame_communists
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+    	text = GRE_junta_blame_communists
+    	prerequisite = { focus = GRE_junta_national_unrest }
+		x = -1
+		y = 1
+		relative_position_id = GRE_junta_national_unrest
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+		    add_popularity = { ideology = communism popularity = -0.1}
+		    add_stability = -0.03
+		}
+	}
+
+	focus = {
+		id = GRE_ban_democratic_ideas
+		icon = GFX_focus_CZE_german_puppet
+    	text = GRE_ban_democratic_ideas
+    	prerequisite = { focus = GRE_junta_national_unrest }
+		x = 1
+		y = 1
+		relative_position_id = GRE_junta_national_unrest
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+		    add_popularity = { ideology = democratic popularity = -0.1}
+		    add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = GRE_junta_dominant_party
+		icon = GFX_goal_generic_political_pressure
+    	text = GRE_junta_dominant_party
+    	prerequisite = { focus = GRE_ban_democratic_ideas }
+    	prerequisite = { focus = GRE_junta_blame_communists }
+		x = -1
+		y = 1
+		relative_position_id = GRE_ban_democratic_ideas
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+		    add_ideas = GRE_dominant_ideology
+		}
+	}
+
+	focus = {
+		id = GRE_take_stance
+		icon = GFX_focus_generic_diplomatic_treaty
+    	text = GRE_take_stance
+    	prerequisite = { focus = GRE_attempt_military_coup }
+		x = 3
+		y = 1
+		relative_position_id = GRE_attempt_military_coup
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+		    add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GRE_junta_support_britain
+		icon = GFX_focus_chi_british_cooperation
+    	text = GRE_junta_support_britain
+    	prerequisite = { focus = GRE_take_stance }
+    	mutually_exclusive = { focus = GRE_junta_support_germany }
+    	x = -2
+		y = 1
+		relative_position_id = GRE_take_stance
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_war_with = ENG
+		    }
+		}
+
+      	completion_reward = {
+		    add_opinion_modifier = { target = ENG modifier = medium_increase }
+			ENG = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+		}
+	}
+
+	focus = {
+		id = GRE_junta_support_france
+		icon = GFX_focus_chi_reach_out_to_france
+    	text = GRE_junta_support_france
+		prerequisite = { focus = GRE_take_stance }
+		mutually_exclusive = { focus = GRE_junta_support_italy }
+		x = -1
+		y = 2
+		relative_position_id = GRE_take_stance
+		cost = 5
+		ai_will_do = {
+			factor = 8
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_war_with = FRA
+		    }
+		}
+
+      	completion_reward = {
+			add_opinion_modifier = { target = FRA modifier = medium_increase }
+			FRA = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+		}
+	}
+
+	focus = {
+		id = GRE_junta_support_germany
+		icon = GFX_focus_chi_mission_to_germany
+    	text = GRE_junta_support_germany
+		prerequisite = { focus = GRE_take_stance }
+		mutually_exclusive = { focus = GRE_junta_support_britain }
+		x = 2
+		y = 1
+		relative_position_id = GRE_take_stance
+		cost = 5
+		ai_will_do = {
+			factor = 8
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_war_with = GER
+		    }
+		}
+
+      	completion_reward = {
+			add_opinion_modifier = { target = GER modifier = medium_increase }
+			GER = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+		}
+	}
+
+	focus = {
+		id = GRE_junta_support_italy
+		icon = GFX_focus_generic_italy_first
+    	text = GRE_junta_support_italy
+		prerequisite = { focus = GRE_take_stance }
+		mutually_exclusive = { focus = GRE_junta_support_france }
+		x = 1
+		y = 2
+		relative_position_id = GRE_take_stance
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+    
+		available_if_capitulated = yes
+
+		available = {
+		    NOT = {
+		        has_war_with = ITA
+		    }
+		}
+
+      	completion_reward = {
+			add_opinion_modifier = { target = ITA modifier = medium_increase }
+			ITA = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+		}
+	}
+
+	focus = {
+		id = GRE_junta_expansionism
+		icon = GFX_goal_generic_more_territorial_claims
+    	text = GRE_junta_expansionism
+		prerequisite = { focus = GRE_take_stance }
+		x = 0
+		y = 3
+		relative_position_id = GRE_take_stance
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_allied_support
+		icon = GFX_focus_generic_self_management
+    	text = GRE_allied_support
+		prerequisite = { focus = GRE_junta_support_britain }
+		prerequisite = { focus = GRE_junta_support_france }
+		x = 0
+		y = 2
+		relative_position_id = GRE_junta_support_britain
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_war_support = 0.02
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GRE_axis_support
+		icon = GFX_focus_generic_strike_at_democracy1
+    	text = GRE_axis_support
+		prerequisite = { focus = GRE_junta_support_germany }
+		prerequisite = { focus = GRE_junta_support_italy }
+		x = 1
+		y = 1
+		relative_position_id = GRE_junta_support_italy
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_war_support = 0.02
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GRE_denounce_lausanne_treaty
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+    	text = GRE_denounce_lausanne_treaty
+		prerequisite = { focus = GRE_junta_expansionism }
+		x = -1
+		y = 2
+		relative_position_id = GRE_junta_support_italy
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_named_threat = { threat = 2 name = GRE_denouncelausanne }
+			add_opinion_modifier = { target = TUR modifier = large_decrease }
+			TUR = { add_opinion_modifier = { target = GRE modifier = large_decrease } }
+		}
+	}
+
+	focus = {
+		id = GRE_allied_claims_on_turkey
+		icon = GFX_goal_generic_demand_territory
+    	text = GRE_allied_claims_on_turkey
+		prerequisite = { focus = GRE_denounce_lausanne_treaty }
+		prerequisite = { focus = GRE_allied_support }
+		x = 0
+		y = 2
+		relative_position_id = GRE_allied_support
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = yes
+
+      	completion_reward = {
+			add_state_claim = 339
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = GRE_treaty_of_athens
+		icon = GFX_focus_generic_treaty
+    	text = GRE_treaty_of_athens
+		prerequisite = { focus = GRE_allied_claims_on_turkey }
+		x = 0
+		y = 2
+		relative_position_id = GRE_allied_claims_on_turkey
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			add_stability = 0.05
+			341 = { set_demilitarized_zone = yes }
+			country_event = greatergreece.9
+			set_country_flag = GRE_treaty_of_athens_flag
+		}
+	}
+
+	focus = {
+		id = GRE_junta_attempt_to_join_the_allies
+		icon = GFX_goal_anschluss
+    	text = GRE_junta_attempt_to_join_the_allies
+		prerequisite = { focus = GRE_allied_support }
+		x = -1
+		y = -1
+		relative_position_id = GRE_allied_claims_on_turkey
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+		available = {
+		    has_government = neutrality
+		}
+
+      	completion_reward = {
+			ENG = { country_event = { id = greatergreece.26 } }
+		}
+	}
+
+	focus = {
+		id = GRE_junta_move_north
+		icon = GFX_goal_generic_territory_or_war
+    	text = GRE_junta_move_north
+		prerequisite = { focus = GRE_treaty_of_athens }
+		mutually_exclusive = { focus = GRE_respect_athens_treaty }
+		x = 0
+		y = 4
+		relative_position_id = GRE_junta_attempt_to_join_the_allies
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+		available = {
+		    has_country_flag = GRE_treaty_of_athens_flag
+		}
+
+      	completion_reward = {
+			country_event = greatergreece.16
+		}
+	}
+
+	focus = {
+		id = GRE_respect_athens_treaty
+		icon = GFX_goal_generic_improve_relations
+    	text = GRE_respect_athens_treaty
+		prerequisite = { focus = GRE_treaty_of_athens }
+		mutually_exclusive = { focus = GRE_junta_move_north }
+		x = 1
+		y = 1
+		relative_position_id = GRE_treaty_of_athens
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+		available = {
+		    has_country_flag = GRE_treaty_of_athens_flag
+		}
+
+      	completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = GRE_junta_claims_on_italy
+		icon = GFX_goal_generic_demand_territory
+    	text = GRE_junta_claims_on_italy
+		prerequisite = { focus = GRE_junta_attempt_to_join_the_allies }
+		prerequisite = { focus = GRE_denounce_lausanne_treaty }
+		x = -2
+		y = 2
+		relative_position_id = GRE_allied_support
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = GRE_junta_demand_rhodes
+		icon = GFX_goal_generic_territory_or_war
+    	text = GRE_junta_demand_rhodes
+		prerequisite = { focus = GRE_junta_claims_on_italy }
+		x = 0
+		y = 2
+		relative_position_id = GRE_junta_claims_on_italy
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			ITA = { country_event = greatergreece.29 }
+		}
+	}
+
+	focus = {
+		id = GRE_junta_ask_for_cyprus
+		icon = GFX_goal_generic_major_alliance
+    	text = GRE_junta_ask_for_cyprus
+		prerequisite = { focus = GRE_junta_attempt_to_join_the_allies }
+		x = 0
+		y = 2
+		relative_position_id = GRE_junta_attempt_to_join_the_allies
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			ENG = { country_event = greatergreece.27 }
+		}
+	}
+
+	focus = {
+		id = GRE_axis_claims_on_turkey
+		icon = GFX_goal_generic_demand_territory
+    	text = GRE_axis_claims_on_turkey
+		prerequisite = { focus = GRE_axis_support }
+		prerequisite = { focus = GRE_denounce_lausanne_treaty }
+		x = 0
+		y = 2
+		relative_position_id = GRE_axis_support
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			add_named_threat = { threat = 2 name = GRE_exterminateminorities }
+			add_state_claim = 339
+			add_state_claim = 340
+			add_stability = -0.03
+			add_political_power = 10
+		}
+	}
+
+	focus = {
+		id = GRE_axis_treaty_of_rome
+		icon = GFX_goal_generic_forceful_treaty
+    	text = GRE_axis_treaty_of_rome
+		prerequisite = { focus = GRE_axis_claims_on_turkey }
+		mutually_exclusive = { focus = GRE_axis_full_scale_war_on_turkey }
+		x = -1
+		y = 3
+		relative_position_id = GRE_axis_support
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			country_event =  greatergreece.19 
+		}
+	}
+
+	focus = {
+		id = GRE_axis_full_scale_war_on_turkey
+		icon = GFX_goal_generic_forceful_treaty
+    	text = GRE_axis_full_scale_war_on_turkey
+		prerequisite = { focus = GRE_axis_claims_on_turkey }
+		mutually_exclusive = { focus = GRE_axis_treaty_of_rome }
+		x = 1
+		y = 3
+		relative_position_id = GRE_axis_support
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			declare_war_on = { target = TUR type = annex_everything }
+			ITA = { country_event = greatergreece.20 }
+		}
+	}
+
+	focus = {
+		id = GRE_axis_demand_cyprus
+		icon = GFX_focus_RAJ_clamp_down_on_corruption
+    	text = GRE_axis_demand_cyprus
+		prerequisite = { focus = GRE_denounce_lausanne_treaty }
+		prerequisite = { focus = GRE_junta_join_axis }
+		x = 2
+		y = 2
+		relative_position_id = GRE_axis_support
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			ENG = { country_event =  greatergreece.25 }
+		}
+	}
+
+	focus = {
+		id = GRE_junta_join_axis
+		icon = GFX_goal_molotov_ribbentrop_pact
+    	text = GRE_junta_join_axis
+		prerequisite = { focus = GRE_axis_support }
+		x = 1
+		y = 1
+		relative_position_id = GRE_axis_support
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			GER = { country_event = greatergreece.28 }
+		}
+	}
+
+	focus = {
+		id = GRE_restore_byzantium
+		icon = GFX_focus_hun_elect_a_king
+    	text = GRE_restore_byzantium
+		x = 0
+		y = 3
+		relative_position_id = GRE_surprise_attack_italy
+		cost = 10
+		ai_will_do = {
+			factor = 15
+		}
+    
+		available_if_capitulated = no
+
+		available = {
+		    owns_state = 341
+		    owns_state = 339
+		    owns_state = 731
+		    owns_state = 47
+		    NOT = {
+		        has_government = communism
+		    }
+		}
+
+      	completion_reward = {
+			hidden_effect = {
+			    set_cosmetic_tag = GRE_GREATER
+			}
+			add_stability = 0.1
+			set_major = yes
+		}
+	}
+
+	focus = {
+		id = GRE_byzantine_republic
+		icon = GFX_focus_generic_the_giant_wakes
+    	text = GRE_byzantine_republic
+    	prerequisite = { focus = GRE_restore_byzantium }
+    	mutually_exclusive = { focus = GRE_byzantine_absolutist_kingdom }
+		x = -1
+		y = 1
+		relative_position_id = GRE_restore_byzantium
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			add_ideas = GRE_democratic_support
+			add_popularity = { ideology = democratic popularity = 0.2 }
+			add_stability = 0.05
+			add_political_power = -50
+			set_politics = {
+			    ruling_party = democratic
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_byzantine_absolutist_kingdom
+		icon = GFX_focus_rom_royal_dictatorship
+    	text = GRE_byzantine_absolutist_kingdom
+    	prerequisite = { focus = GRE_restore_byzantium }
+    	mutually_exclusive = { focus = GRE_byzantine_republic }
+		x = 1
+		y = 1
+		relative_position_id = GRE_restore_byzantium
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+    
+		available_if_capitulated = no
+
+      	completion_reward = {
+			add_ideas = GRE_dominant_ideology
+			add_popularity = { ideology = neutrality popularity = 0.2 }
+			add_stability = -0.05
+			add_political_power = 50
+			set_politics = {
+			    ruling_party = neutrality
+			}
+			retire_country_leader = yes
+			create_country_leader = {
+	            name = "George II"
+	            desc = "POLITICS_KING_GEORGE_DESC"
+	            picture = "kinggeorgeii.dds"
+	            expire = "1965.1.1"
+	            ideology = despotism
+	            traits = {
+		        
+	            }
+	        }
+	        set_party_name = { 
+                ideology = neutrality 
+                long_name = GRE_neutrality_party_byzantium_long 
+                name = GRE_neutrality_party_byzantium 
+            }
+		}
+	}
+
+	focus = {
+        id = GRE_cooperate_with_the_patriarch
+        icon = GFX_focus_generic_self_management
+        text = GRE_cooperate_with_the_patriarch
+        prerequisite = { focus = GRE_byzantine_absolutist_kingdom focus = GRE_byzantine_republic }
+        x = 0
+        y = 2
+        relative_position_id = GRE_restore_byzantium
+        cost = 10
+        ai_will_do = {
+            factor = 4
+        }
+        
+		available_if_capitulated = no
+
+        completion_reward = {
+            add_ideas = GRE_patriarch_support
+        }
+    }
+}
+
