@@ -4275,6 +4275,49 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/GRE_tactical_bomber3.dds"
 	}		
 	
+	SpriteType = {
+		name = "GFX_GRE_jet_fighter1_medium"
+		texturefile = "gfx/interface/technologies/GRE_jet_fighter1.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_GRE_jet_fighter2_medium"
+		texturefile = "gfx/interface/technologies/GRE_jet_fighter2.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_GRE_jet_strategic_bomber1_medium"
+		texturefile = "gfx/interface/technologies/GRE_jet_strategic_bomber1.dds"
+	}	
+
+	SpriteType = {
+		name = "GFX_GRE_jet_tactical_bomber1_medium"
+		texturefile = "gfx/interface/technologies/GRE_jet_tactical_bomber1.dds"
+	}	
+	
+	SpriteType = {
+		name = "GFX_GRE_jet_tactical_bomber2_medium"
+		texturefile = "gfx/interface/technologies/GRE_jet_tactical_bomber2.dds"
+	}		
+	
+	SpriteType = {
+		name = "GFX_GRE_transport_plane_equipment_medium"
+		texturefile = "gfx/interface/technologies/GRE_transport_plane_equipment.dds"
+	}			
+	
+	SpriteType = {
+		name = "GFX_GRE_scout_plane_1_1_medium"
+		texturefile = "gfx/interface/technologies/GRE_scout_plane_1_1.dds"
+	}		
+	
+	SpriteType = {
+		name = "GFX_GRE_scout_plane_2_2_medium"
+		texturefile = "gfx/interface/technologies/GRE_scout_plane_2_2.dds"
+	}		
+
+
+
+
 	
 	
 	#####Poland#######
