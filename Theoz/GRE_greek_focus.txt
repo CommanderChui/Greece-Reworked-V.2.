@@ -1,0 +1,2469 @@
+focus_tree = {
+	id = greek_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GRE
+		}
+	}
+	#Focus for Exile the King L
+	focus = {
+		id = GRE_exile_the_king_l
+		icon = GFX_focus_rom_abdicate
+		x = 26
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_national_socialism_focus }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			is_puppet = no
+has_government = fascism
+has_war = no
+		}
+		completion_reward = {
+			add_popularity= { 
+ideology = fascism 
+popularity = 0.1 
+}
+		}
+	}
+
+	#Focus for Radical Right Wing
+	focus = {
+		id = GRE_radical_right_wing
+		icon = GFX_focus_ger_return_of_the_kaiser
+		x = 33
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_national_orientation_focus }
+		mutually_exclusive = { 
+			focus = GRE_conservative_right_wing 
+		}
+		mutually_exclusive = { 
+			focus = GRE_liberal__social_powers_together 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_opinion_modifier= { 
+target = ENG 
+modifier = tizard_refused 
+}
+		}
+	}
+
+	#Focus for Conservative Right Wing
+	focus = {
+		id = GRE_conservative_right_wing
+		icon = GFX_goal_generic_defence
+		x = 46
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_national_orientation_focus }
+		mutually_exclusive = { 
+			focus = GRE_radical_right_wing 
+		}
+		mutually_exclusive = { 
+			focus = GRE_liberal__social_powers_together 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_opinion_modifier= { 
+target = ENG 
+modifier = tizard_refused 
+}
+		}
+	}
+
+	#Focus for Demand Cyprus M
+	focus = {
+		id = GRE_demand_cyprus_m
+		icon = GFX_goal_generic_small_arms
+		x = 42
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_third_hellenic_civilization }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for British Investments
+	focus = {
+		id = GRE_british_investments
+		icon = GFX_focus_eng_the_sun_never_sets
+		x = 45
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_glorify_the_king }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for North Epirus Annexation M
+	focus = {
+		id = GRE_north_epirus_annexation_m
+		icon = GFX_goal_generic_small_arms
+		x = 46
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_allies_with_britain }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Metaxas Defnce Line
+	focus = {
+		id = GRE_metaxas_defnce_line
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = 36
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_social_insurance_institution }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			add_political_power = -100
+731 = {
+   if = { 
+        limit = { is_controlled_by = GRE }
+            add_building_construction = {
+            type = bunker
+            level = 3
+            province = 3526
+            instant_build = yes
+            }
+            add_building_construction = {
+            type = bunker
+            level = 3
+            province = 6990
+            instant_build = yes
+            }
+    }
+}
+184 = {
+    if = { 
+        limit = { is_controlled_by = GRE }
+            add_building_construction = {
+            type = bunker
+            level = 2
+            province = 9791
+            instant_build = yes
+            }
+            add_building_construction = {
+            type = bunker
+            level = 2
+            province = 11774
+            instant_build = yes
+            }
+            add_building_construction = {
+            type = bunker
+            level = 2
+            province = 11905
+            instant_build = yes
+            }
+            }
+        }
+		}
+	}
+
+	#Focus for Replace Army Officers Effort
+	focus = {
+		id = GRE_replace_army_officers_effort
+		icon = GFX_focus_generic_military_mission
+		x = 39
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_internal_security_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support = 0.05
+add_political_power = 30
+set_country_flag = metaxa_militarism_flag
+add_ideas = GRE_coup_plot
+		}
+	}
+
+	#Focus for Immure Democratic Leaders
+	focus = {
+		id = GRE_immure_democratic_leaders
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 40
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_agents_trained_by_gestapo }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Agents Trained by Gestapo
+	focus = {
+		id = GRE_agents_trained_by_gestapo
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 39
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_replace_army_officers_effort }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			add_political_power = -50
+add_stability = -0.1
+add_war_support = -0.1
+		}
+	}
+
+	#Focus for Fake Communist Party Effort
+	focus = {
+		id = GRE_fake_communist_party_effort
+		icon = GFX_goal_anti_comintern_pact
+		x = 38
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_agents_trained_by_gestapo }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			custom_effect_tooltip = 8_GRE_tt
+hidden_effect = {
+    add_stability = -0.05
+    add_war_support = -0.02
+}
+		}
+	}
+
+	#Focus for Glorify the King
+	focus = {
+		id = GRE_glorify_the_king
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 45
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_public_culture_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			add_political_power = 30
+		}
+	}
+
+	#Focus for Embrace 4th August
+	focus = {
+		id = GRE_embrace_4th_august
+		icon = GFX_goal_tfv_can_compromise_with_quebec
+		x = 42
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_promote_greek_arts__values 
+		}
+		prerequisite = { 
+			focus = GRE_national_youth_organisation 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50
+add_stability = 0.05
+remove_ideas = GRE_divided_nation
+custom_effect_tooltip = 11_GRE_tt
+		}
+	}
+
+	#Focus for Exterminate Communists Effort
+	focus = {
+		id = GRE_exterminate_communists_effort
+		icon = GFX_goal_anti_comintern_pact
+		x = 38
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_fake_communist_party_effort }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for National Youth Organisation
+	focus = {
+		id = GRE_national_youth_organisation
+		icon = GFX_focus_generic_military_academy
+		x = 41
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_public_culture_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			add_ideas = GRE_national_youth_organisation
+		}
+	}
+
+	#Focus for National Strategic Plan
+	focus = {
+		id = GRE_national_strategic_plan
+		icon = GFX_goal_generic_territory_or_war
+		x = 50
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_embrace_constitutional_monarchy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Anti-Aircraft Umbrella Focus
+	focus = {
+		id = GRE_antiaircraft_umbrella_focus
+		icon = GFX_focus_generic_air_defense
+		x = 31
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_cities_fortifications_focus 
+		}
+		prerequisite = { 
+			focus = GRE_hellenic_industrialisation_effort 
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		completion_reward = {
+			add_building_construction= { 
+type = anti_air_building 
+state = 731 
+level = 1 
+instant_build = yes }
+add_building_construction= { 
+type = anti_air_building 
+state = 47 
+level = 1 
+instant_build = yes }
+add_building_construction= { 
+type = anti_air_building
+state = 185 
+level = 1 
+instant_build = yes }
+add_building_construction= { 
+type = anti_air_building 
+state = 184 
+level = 1 
+instant_build = yes }
+add_building_construction= { 
+type = anti_air_building 
+state = 186 
+level = 1 
+instant_build = yes }
+add_building_construction= { 
+type = anti_air_building 
+state = 187 
+level = 1 
+instant_build = yes }
+add_building_construction= { 
+type = anti_air_building 
+state = 182 
+level = 1 
+instant_build = yes }
+		}
+	}
+
+	#Focus for Join the Balkan National Union
+	focus = {
+		id = GRE_join_the_balkan_national_union
+		icon = GFX_focus_generic_treaty
+		x = 25
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_balkan_partnership_focus }
+		mutually_exclusive = { focus = GRE_join_axis }
+		completion_reward = {
+			add_political_power = 10
+set_rule = {
+                can_create_factions = yes
+}
+		}
+	}
+
+	#Focus for Balkan Partnership Focus
+	focus = {
+		id = GRE_balkan_partnership_focus
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 25
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_special_security_directorate }
+		available = {
+			has_governmentROM = fascismhas_governmentBul = fascisthas_governmentAlB = Fiacisthas_governmentYUG = Fascist
+		}
+		completion_reward = {
+			create_factionROM = 'french_entente_alliance'add_to_faction= ROMadd_to_faction= BULadd_to_faction= YUGadd_to_faction= ALB
+		}
+	}
+
+	#Focus for Security Battalions Focus
+	focus = {
+		id = GRE_security_battalions_focus
+		icon = GFX_goal_tfv_can_forced_quebec_conscription
+		x = 33
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_spartan_legacy_focus }
+		completion_reward = {
+			add_ideas = GRE_recruitment_effort
+		}
+	}
+
+	#Focus for Cities' Fortifications Focus
+	focus = {
+		id = GRE_cities_fortifications_focus
+		icon = GFX_goal_generic_construct_military
+		x = 33
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_security_battalions_focus }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT } 
+		available = {
+			is_in_home_area= yes
+		}
+		completion_reward = {
+			add_building_construction= { 
+type = bunker 
+province = 11818 
+level = 3 
+instant_build = yes }
+		}
+	}
+
+	#Focus for Join Axis
+	focus = {
+		id = GRE_join_axis
+		icon = GFX_focus_ger_reichskommisariats
+		x = 28
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_special_security_directorate 
+		}
+		prerequisite = { 
+			focus = GRE_kommandatur_in_athens 
+		}
+		mutually_exclusive = { focus = GRE_join_the_balkan_national_union }
+		completion_reward = {
+			GER = { country_event = greatergreece.28 }
+		}
+	}
+
+	#Focus for Spartan Legacy Focus
+	focus = {
+		id = GRE_spartan_legacy_focus
+		icon = GFX_goal_tfv_can_compromise_with_quebec
+		x = 33
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_regime_consolidation_effort }
+		completion_reward = {
+			add_war_support= 5add_manpower= 8000add_popularity= { 
+ideology = fascism 
+popularity = 0.1 
+}
+		}
+	}
+
+	#Focus for Hellenic Industrialisation Effort
+	focus = {
+		id = GRE_hellenic_industrialisation_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 31
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_goebbels_visit 
+		}
+		prerequisite = { 
+			focus = GRE_modernised_economy_effort 
+		}
+	}
+
+	#Focus for Special Security Directorate
+	focus = {
+		id = GRE_special_security_directorate
+		icon = GFX_focus_generic_military_mission
+		x = 26
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_exile_the_king_l }
+	}
+
+	#Focus for Modernised Economy Effort
+	focus = {
+		id = GRE_modernised_economy_effort
+		icon = GFX_goal_continuous_non_factory_construct
+		x = 31
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_regime_consolidation_effort }
+	}
+
+	#Focus for National Socialism Focus
+	focus = {
+		id = GRE_national_socialism_focus
+		icon = GFX_goal_support_fascism
+		x = 28
+		y = 3
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_radical_right_wing }
+		mutually_exclusive = { 
+			focus = GRE_neutrality_focus 
+		}
+		mutually_exclusive = { 
+			focus = GRE_republic_focus 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		available = {
+			has_government= fascism
+		}
+		completion_reward = {
+			swap_ideas= {
+ remove_idea = REM_IDEA_ID 
+add_idea = ADD_IDEA_ID 
+}
+		}
+	}
+
+	#Focus for Regime Consolidation Effort
+	focus = {
+		id = GRE_regime_consolidation_effort
+		icon = GFX_goal_generic_demand_territory
+		x = 30
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_national_socialism_focus }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		completion_reward = {
+			add_popularity= { 
+ideology = fascism 
+popularity = 0.1 
+}
+		}
+	}
+
+	#Focus for Revage Communism Focus
+	focus = {
+		id = GRE_revage_communism_focus
+		icon = GFX_goal_generic_secret_weapon
+		x = 27
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_special_security_directorate }
+	}
+
+	#Focus for Goebbels Visit
+	focus = {
+		id = GRE_goebbels_visit
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 29
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_regime_consolidation_effort }
+		completion_reward = {
+			add_opinion_modifier= { 
+target = ENG 
+modifier = tizard_refused 
+}
+diplomatic_relation= { 
+country = CHOOSE COUNTRY 
+relation = non_aggression_pact 
+}
+add_political_power= 50
+		}
+	}
+
+	#Focus for Kommandatur in Athens
+	focus = {
+		id = GRE_kommandatur_in_athens
+		icon = GFX_focus_ger_oppose_hitler
+		x = 29
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_goebbels_visit }
+		completion_reward = {
+			add_opinion_modifier = { target = GER modifier = medium_increase }
+GER = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+diplomatic_relation = {
+    country = GER
+    relation = non_aggression_pact
+}
+		}
+	}
+
+	#Focus for Demand Cyprus L
+	focus = {
+		id = GRE_demand_cyprus_l
+		icon = GFX_goal_generic_small_arms
+		x = 26
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_join_the_balkan_national_union 
+			focus = GRE_join_axis 
+		}
+		available = {
+			has_army_manpower = { size > 200000 }
+OR = {
+NOT = { ENG = { is_in_faction_with = GRE } }
+}
+		}
+		completion_reward = {
+			ENG = { country_event = greatergreece.25 }
+add_state_core = 183
+		}
+	}
+
+	#Focus for Euxine Pontus Εxpedition L
+	focus = {
+		id = GRE_euxine_pontus_xpedition_l
+		icon = GFX_goal_generic_small_arms
+		x = 28
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_join_the_balkan_national_union 
+			focus = GRE_join_axis 
+		}
+		available = {
+			has_army_manpower = { size > 200000 }
+OR = {
+NOT = { TUR = { is_in_faction_with = GRE } }
+}
+		}
+		completion_reward = {
+			TUR = { country_event = greatergreece.30 }
+add_state_claim = 339
+add_state_claim = 340
+add_state_claim = 347
+		}
+	}
+
+	#Focus for Merchant Navy focus
+	focus = {
+		id = GRE_merchant_navy_focus
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 37
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_neutrality_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Neutrality Focus
+	focus = {
+		id = GRE_neutrality_focus
+		icon = GFX_goal_generic_demand_territory
+		x = 39
+		y = 3
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_radical_right_wing 
+			focus = GRE_conservative_right_wing 
+		}
+		mutually_exclusive = { 
+			focus = GRE_national_socialism_focus 
+		}
+		mutually_exclusive = { 
+			focus = GRE_republic_focus 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			add_ideas= ENG_king_edward
+		}
+	}
+
+	#Focus for Social Insurance Institution
+	focus = {
+		id = GRE_social_insurance_institution
+		icon = GFX_focus_generic_self_management
+		x = 36
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_corporatism_effort }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			add_stability = 0.1
+add_ideas = GRE_IKA
+		}
+	}
+
+	#Focus for Corporatism Effort
+	focus = {
+		id = GRE_corporatism_effort
+		icon = GFX_goal_generic_construction2
+		x = 36
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_infrastructure_effort 
+		}
+		prerequisite = { 
+			focus = GRE_merchant_navy_focus 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			custom_trigger_tooltip = {
+tooltip = construction_effort_tt
+NOT = {
+any_owned_state = {
+is_controlled_by = ROOT
+free_building_slots = {
+building = industrial_complex
+size > 1
+include_locked = yes
+}
+}
+}
+}
+		}
+		completion_reward = {
+			add_stability = 0.02
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = industrial_complex
+size > 1
+include_locked = yes
+}
+is_on_continent = europe
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = industrial_complex
+size > 1
+include_locked = yes
+}
+is_on_continent = europe
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}
+}
+		}
+	}
+
+	#Focus for Public Culture Focus
+	focus = {
+		id = GRE_public_culture_focus
+		icon = GFX_goal_generic_national_unity
+		x = 43
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_neutrality_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	#Focus for Infrastructure Effort
+	focus = {
+		id = GRE_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 35
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_neutrality_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = infrastructure
+size > 0
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = infrastructure
+size > 0
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+random_owned_controlled_state = {
+limit = {
+free_building_slots = {
+building = infrastructure
+size > 1
+}
+OR = {
+is_in_home_area = yes
+NOT = {
+owner = {
+any_owned_state = {
+free_building_slots = {
+building = infrastructure
+size > 1
+}
+is_in_home_area = yes
+}
+}
+}
+}
+}
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+		}
+	}
+
+	#Focus for Internal Security Focus
+	focus = {
+		id = GRE_internal_security_focus
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 40
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_neutrality_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			army_experience = 50
+add_war_support = 0.1
+		}
+	}
+
+	#Focus for Promote Greek Arts & Values
+	focus = {
+		id = GRE_promote_greek_arts__values
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		x = 43
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_public_culture_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.05
+add_ideas = neutrality_idea
+		}
+	}
+
+	#Focus for Third Hellenic Civilization
+	focus = {
+		id = GRE_third_hellenic_civilization
+		icon = GFX_goal_generic_political_pressure
+		x = 41
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_embrace_4th_august 
+		}
+		prerequisite = { 
+			focus = GRE_agents_trained_by_gestapo 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	#Focus for Allies with Germany
+	focus = {
+		id = GRE_allies_with_germany
+		icon = GFX_focus_chi_mission_to_germany
+		x = 42
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_third_hellenic_civilization }
+		mutually_exclusive = { focus = GRE_allies_with_britain }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+        has_war_with = GER
+    }
+		}
+		completion_reward = {
+			add_political_power = 50
+add_stability = 0.1
+add_war_support = 0.1
+add_opinion_modifier = { target = GER modifier = medium_increase }
+GER = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+set_country_flag = fovring_germany_flag
+		}
+	}
+
+	#Focus for Allies with Britain
+	focus = {
+		id = GRE_allies_with_britain
+		icon = GFX_focus_chi_british_cooperation
+		x = 45
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_british_investments }
+		mutually_exclusive = { focus = GRE_allies_with_germany }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+        has_war_with = ENG
+    }
+		}
+		completion_reward = {
+			add_political_power = 50
+add_stability = 0.1
+add_war_support = 0.1
+add_opinion_modifier = { target = ENG modifier = medium_increase }
+ENG = { add_opinion_modifier = { target = GRE modifier = medium_increase } }
+set_country_flag = fovring_britain_flag
+		}
+	}
+
+	#Focus for Dodecanese Campaign M
+	focus = {
+		id = GRE_dodecanese_campaign_m
+		icon = GFX_goal_generic_small_arms
+		x = 44
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_allies_with_britain }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Britain Strategic Ally
+	focus = {
+		id = GRE_britain_strategic_ally
+		icon = GFX_focus_chi_british_cooperation
+		x = 55
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_foreign_affairs }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Farms to Refugees
+	focus = {
+		id = GRE_farms_to_refugees
+		icon = GFX_focus_generic_concessions
+		x = 52
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_agriculture_as_steam_engine }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Exports Focus
+	focus = {
+		id = GRE_exports_focus
+		icon = GFX_goal_generic_trade
+		x = 52
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_farms_to_refugees }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Great Idea Focus T
+	focus = {
+		id = GRE_the_great_idea_focus_t
+		icon = GFX_goal_generic_small_arms
+		x = 50
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_propaganda_against_communism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Primary Sector Focus
+	focus = {
+		id = GRE_primary_sector_focus
+		icon = GFX_focus_generic_industry_1
+		x = 52
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_economy_restoration_effort_t }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Agriculture as Steam Engine
+	focus = {
+		id = GRE_agriculture_as_steam_engine
+		icon = GFX_focus_mex_caudillo_private_armies
+		x = 52
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_primary_sector_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Economy Restoration Effort T
+	focus = {
+		id = GRE_economy_restoration_effort_t
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 52
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_internal_affairs }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Embrace Constitutional Monarchy
+	focus = {
+		id = GRE_embrace_constitutional_monarchy
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 49
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_internal_affairs }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Individual Freedoms Effort
+	focus = {
+		id = GRE_individual_freedoms_effort
+		icon = GFX_goal_generic_demand_territory
+		x = 48
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_embrace_constitutional_monarchy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Support Jewish Community
+	focus = {
+		id = GRE_support_jewish_community
+		icon = GFX_goal_generic_dangerous_deal
+		x = 48
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_individual_freedoms_effort }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Propaganda Against Communism
+	focus = {
+		id = GRE_propaganda_against_communism
+		icon = GFX_goal_continuous_def_against_influence
+		x = 50
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_create_the_x_group }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Internal Affairs
+	focus = {
+		id = GRE_internal_affairs
+		icon = GFX_focus_generic_treaty
+		x = 50
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_republic_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Republic Focus
+	focus = {
+		id = GRE_republic_focus
+		icon = GFX_goal_support_democracy
+		x = 53
+		y = 3
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_conservative_right_wing }
+		mutually_exclusive = { 
+			focus = GRE_national_socialism_focus 
+			focus = GRE_neutrality_focus 
+			focus = GRE_ 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government= democracy
+		}
+		completion_reward = {
+			add_ideas= ENG_king_edward
+		}
+	}
+
+	#Focus for Fatherland Defence Industry Focus
+	focus = {
+		id = GRE_fatherland_defence_industry_focus
+		icon = GFX_goal_generic_soviet_construction
+		x = 68
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_liberation_navy_focus 
+		}
+		prerequisite = { 
+			focus = GRE_liberation_army_focus 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+tooltip = production_effort_tt
+NOT = {
+any_owned_state = {
+is_controlled_by = ROOT
+free_building_slots = {
+building = arms_factory
+size > 2
+include_locked = yes
+}
+}
+}
+}
+		}
+		available = {
+			NOT = {
+        has_country_flag = junta_established
+    }
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+limit = {
+arms_factory > 0
+free_building_slots = {
+building = arms_factory
+size > 1
+include_locked = yes
+}
+is_on_continent = europe
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}
+}
+random_owned_controlled_state = {
+limit = {
+arms_factory > 0
+free_building_slots = {
+building = arms_factory
+size > 1
+include_locked = yes
+}
+is_on_continent = europe
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}
+}
+if = {
+limit = {
+NOT = {
+any_owned_state = {
+arms_factory > 0
+free_building_slots = {
+building = arms_factory
+size > 1
+include_locked = yes
+}
+is_on_continent = europe
+}
+}
+}
+random_owned_controlled_state = {
+limit = {
+arms_factory > 0
+free_building_slots = {
+building = arms_factory
+size > 1
+include_locked = yes
+}
+is_on_continent = europe
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}
+}
+random_owned_controlled_state = {
+limit = {
+arms_factory > 0
+free_building_slots = {
+building = arms_factory
+size > 1
+include_locked = yes
+}
+is_on_continent = europe
+}
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}
+}
+}
+		}
+	}
+
+	#Focus for Create the X Group
+	focus = {
+		id = GRE_create_the_x_group
+		icon = GFX_goal_tfv_can_forced_quebec_conscription
+		x = 50
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_national_strategic_plan }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Foreign Affairs
+	focus = {
+		id = GRE_foreign_affairs
+		icon = GFX_goal_generic_forceful_treaty
+		x = 57
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_republic_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Working Class Rulles
+	focus = {
+		id = GRE_working_class_rulles
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 63
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_proletorian_revolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Coastal Fortifications
+	focus = {
+		id = GRE_coastal_fortifications
+		icon = GFX_goal_generic_army_artillery2
+		x = 56
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_join_the_allies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Area Regulator
+	focus = {
+		id = GRE_area_regulator
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 58
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_foreign_affairs }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Magna Grecia Effort T
+	focus = {
+		id = GRE_magna_grecia_effort_t
+		icon = GFX_goal_generic_small_arms
+		x = 56
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_dodecanese_campaign_t 
+			focus = GRE_coastal_fortifications 
+			focus = GRE_commandos_effort 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Join the Allies
+	focus = {
+		id = GRE_join_the_allies
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		x = 55
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_britain_strategic_ally }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Commandos Effort
+	focus = {
+		id = GRE_commandos_effort
+		icon = GFX_focus_eng_special_air_service
+		x = 54
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_join_the_allies }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for North Epirus Annexation T
+	focus = {
+		id = GRE_north_epirus_annexation_t
+		icon = GFX_goal_generic_small_arms
+		x = 57
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_area_regulator }
+		mutually_exclusive = { focus = GRE_independence_guarantor }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Independence Guarantor
+	focus = {
+		id = GRE_independence_guarantor
+		icon = GFX_focus_generic_self_management
+		x = 59
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_area_regulator }
+		mutually_exclusive = { focus = GRE_north_epirus_annexation_t }
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			country_exists= ALBhas_government= democracyhas_government= neutral
+		}
+		completion_reward = {
+			give_guarantee= ALB
+		}
+	}
+
+	#Focus for National Orientation Focus
+	focus = {
+		id = GRE_national_orientation_focus
+		icon = GFX_goal_generic_cavalry
+		x = 46
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_discussions_after_political_instability }
+		search_filters = { FOCUS_FILTER_STABILITY } 
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power= 50add_stability= 0.05
+		}
+	}
+
+	#Focus for Dodecanese Campaign T
+	focus = {
+		id = GRE_dodecanese_campaign_t
+		icon = GFX_goal_generic_small_arms
+		x = 58
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_north_epirus_annexation_t 
+			focus = GRE_independence_guarantor 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Liberal & Social Powers Together
+	focus = {
+		id = GRE_liberal__social_powers_together
+		icon = GFX_goal_tripartite_pact
+		x = 69
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_national_orientation_focus }
+		mutually_exclusive = { 
+			focus = GRE_radical_right_wing 
+		}
+		mutually_exclusive = { 
+			focus = GRE_conservative_right_wing 
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			date >, date <> 1936.2.19
+		}
+		completion_reward = {
+			add_opinion_modifier= { 
+target = ENG 
+modifier = tizard_refused 
+}
+		}
+	}
+
+	#Focus for Discussions after Political Instability
+	focus = {
+		id = GRE_discussions_after_political_instability
+		icon = GFX_goal_generic_army_doctrines
+		x = 46
+		y = 0
+		cost = 6
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL } 
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			date >, date <> 1936.1.27
+		}
+		completion_reward = {
+			add_ideas= ENG_king_edward
+		}
+	}
+
+	#Focus for Close Banks & Depts
+	focus = {
+		id = GRE_close_banks__depts
+		icon = GFX_focus_mex_privatisation
+		x = 62
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_working_class_rulles }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reduce Bread's Price Focus
+	focus = {
+		id = GRE_reduce_breads_price_focus
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 62
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_close_banks__depts }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Refugees Collectives Effort
+	focus = {
+		id = GRE_refugees_collectives_effort
+		icon = GFX_focus_eng_crush_the_dream
+		x = 64
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_class_warfare_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Marxist Ideology Focus
+	focus = {
+		id = GRE_marxist_ideology_focus
+		icon = GFX_goal_support_communism
+		x = 69
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_liberal__social_powers_together }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas= {
+ remove_idea = REM_IDEA_ID 
+add_idea = ADD_IDEA_ID 
+}
+		}
+	}
+
+	#Focus for Proletorian Revolution
+	focus = {
+		id = GRE_proletorian_revolution
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		x = 69
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_marxist_ideology_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas= ENG_king_edward
+		}
+	}
+
+	#Focus for Social Insurance Focus
+	focus = {
+		id = GRE_social_insurance_focus
+		icon = GFX_focus_generic_self_management
+		x = 63
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_reduce_breads_price_focus 
+		}
+		prerequisite = { 
+			focus = GRE_refugees_collectives_effort 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Class Warfare Focus
+	focus = {
+		id = GRE_class_warfare_focus
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		x = 64
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_working_class_rulles }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Exterminate Fascism
+	focus = {
+		id = GRE_exterminate_fascism
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 75
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_abolish_the_law_4229 
+		}
+		prerequisite = { 
+			focus = GRE_organisation_of_peoples_fighters 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Guard Change in Prisons
+	focus = {
+		id = GRE_guard_change_in_prisons
+		icon = GFX_goal_continuous_boost_freedom
+		x = 75
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_exterminate_fascism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Public Liberties Focus
+	focus = {
+		id = GRE_public_liberties_focus
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 75
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_proletorian_revolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dodecanese Campaign Z
+	focus = {
+		id = GRE_dodecanese_campaign_z
+		icon = GFX_goal_generic_small_arms
+		x = 70
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_join_comintern 
+			focus = GRE_join_the_balkan_socialist_republic 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Magna Grecia Effort Z
+	focus = {
+		id = GRE_magna_grecia_effort_z
+		icon = GFX_goal_generic_small_arms
+		x = 74
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_join_comintern }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Join Comintern
+	focus = {
+		id = GRE_join_comintern
+		icon = GFX_focus_generic_join_comintern
+		x = 73
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_buy_soviet_arms_effort }
+		mutually_exclusive = { focus = GRE_join_the_balkan_socialist_republic }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Join the Balkan Socialist Republic
+	focus = {
+		id = GRE_join_the_balkan_socialist_republic
+		icon = GFX_goal_generic_forceful_treaty
+		x = 71
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_support_the_balkans }
+		mutually_exclusive = { focus = GRE_join_comintern }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Support the Balkans
+	focus = {
+		id = GRE_support_the_balkans
+		icon = GFX_goal_generic_dangerous_deal
+		x = 71
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_organisation_of_peoples_fighters }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Organisation of People's Fighters
+	focus = {
+		id = GRE_organisation_of_peoples_fighters
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 72
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_general_comitee_establishment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Liberation Navy Focus
+	focus = {
+		id = GRE_liberation_navy_focus
+		icon = GFX_focus_hol_legacy_of_the_de_zeven_provincien_mutiny
+		x = 69
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_army_reform_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Black Berets Focus
+	focus = {
+		id = GRE_black_berets_focus
+		icon = GFX_goal_generic_secret_weapon
+		x = 66
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_liberation_army_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Liberation Army Focus
+	focus = {
+		id = GRE_liberation_army_focus
+		icon = GFX_focus_generic_combined_arms
+		x = 67
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_army_reform_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for General Comitee Establishment
+	focus = {
+		id = GRE_general_comitee_establishment
+		icon = GFX_focus_generic_soviet_politics
+		x = 69
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_proletorian_revolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Army Reform Focus
+	focus = {
+		id = GRE_army_reform_focus
+		icon = GFX_goal_tfv_can_forced_quebec_conscription
+		x = 68
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_general_comitee_establishment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Epirus Command Centre
+	focus = {
+		id = GRE_epirus_command_centre
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		x = 68
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_fatherland_defence_industry_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Buy Soviet Arms Effort
+	focus = {
+		id = GRE_buy_soviet_arms_effort
+		icon = GFX_focus_generic_tank_production
+		x = 73
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_organisation_of_peoples_fighters }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Demand Cyprus Z
+	focus = {
+		id = GRE_demand_cyprus_z
+		icon = GFX_goal_generic_small_arms
+		x = 72
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_join_comintern 
+			focus = GRE_join_the_balkan_socialist_republic 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Abolish the Law 4229
+	focus = {
+		id = GRE_abolish_the_law_4229
+		icon = GFX_focus_eng_liberate_the_home_of_marx
+		x = 75
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_public_liberties_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Secret Research Focus
+	focus = {
+		id = GRE_secret_research_focus
+		icon = GFX_focus_research2
+		x = 36
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_metaxas_defnce_line }
+		search_filters = { FOCUS_FILTER_RESEARCH } 
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot= 1
+		}
+	}
+
+	#Focus for Enhance Liberal Movement
+	focus = {
+		id = GRE_enhance_liberal_movement
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		x = 39
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Exile the King P
+	focus = {
+		id = GRE_exile_the_king_p
+		icon = GFX_focus_rom_abdicate
+		x = 37
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_enhance_liberal_movement }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas= ENG_king_edward
+		}
+	}
+
+	#Focus for Confine Political Leaders
+	focus = {
+		id = GRE_confine_political_leaders
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 41
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_enhance_liberal_movement }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Economy Restoration Effort P
+	focus = {
+		id = GRE_economy_restoration_effort_p
+		icon = GFX_goal_generic_construction2
+		x = 34
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_induct_antiroyalist_government }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Induct Anti-Royalist Government
+	focus = {
+		id = GRE_induct_antiroyalist_government
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 39
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_exile_the_king_p 
+		}
+		prerequisite = { 
+			focus = GRE_confine_political_leaders 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Ban Communism
+	focus = {
+		id = GRE_ban_communism
+		icon = GFX_goal_anti_comintern_pact
+		x = 36
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_restore_our_officers_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Authorise NRGL Group
+	focus = {
+		id = GRE_authorise_nrgl_group
+		icon = GFX_goal_tfv_can_forced_quebec_conscription
+		x = 36
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_ban_communism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Effort Against Northern Minorities
+	focus = {
+		id = GRE_effort_against_northern_minorities
+		icon = GFX_goal_generic_political_pressure
+		x = 36
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_authorise_nrgl_group }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Maps out of the Drawer
+	focus = {
+		id = GRE_maps_out_of_the_drawer
+		icon = GFX_goal_generic_territory_or_war
+		x = 38
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_restore_our_officers_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Emphasise in Aircraft Technology
+	focus = {
+		id = GRE_emphasise_in_aircraft_technology
+		icon = GFX_goal_generic_air_fighter2
+		x = 38
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_maps_out_of_the_drawer }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Propaganda on Occupied Homelands
+	focus = {
+		id = GRE_propaganda_on_occupied_homelands
+		icon = GFX_goal_generic_propaganda
+		x = 38
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_emphasise_in_aircraft_technology }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Mussolini Recognises the New order
+	focus = {
+		id = GRE_mussolini_recognises_the_new_order
+		icon = GFX_focus_ger_assassinate_mussolini
+		x = 42
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_allies_with_italy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Demand Cyprus P
+	focus = {
+		id = GRE_demand_cyprus_p
+		icon = GFX_goal_generic_small_arms
+		x = 41
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_mussolini_recognises_the_new_order }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Euxine Pontus Εxpedition P
+	focus = {
+		id = GRE_euxine_pontus_xpedition_p
+		icon = GFX_goal_generic_small_arms
+		x = 43
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_mussolini_recognises_the_new_order }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for De Gaulle Supports the Revolution
+	focus = {
+		id = GRE_de_gaulle_supports_the_revolution
+		icon = GFX_focus_hun_assassinate_horthy
+		x = 46
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_allies_with_france }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for North Epirus Annexation P
+	focus = {
+		id = GRE_north_epirus_annexation_p
+		icon = GFX_goal_generic_small_arms
+		x = 45
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_de_gaulle_supports_the_revolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dodecanese Campaign P
+	focus = {
+		id = GRE_dodecanese_campaign_p
+		icon = GFX_goal_generic_small_arms
+		x = 47
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_de_gaulle_supports_the_revolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Magna Grecia Effort P
+	focus = {
+		id = GRE_magna_grecia_effort_p
+		icon = GFX_goal_generic_small_arms
+		x = 46
+		y = 17
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = GRE_north_epirus_annexation_p 
+		}
+		prerequisite = { 
+			focus = GRE_dodecanese_campaign_p 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Refugees Accommodation
+	focus = {
+		id = GRE_refugees_accommodation
+		icon = GFX_focus_generic_industry_1
+		x = 34
+		y = 16
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_land_redistribution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Special Social Benefits
+	focus = {
+		id = GRE_special_social_benefits
+		icon = GFX_focus_generic_self_management
+		x = 34
+		y = 17
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_refugees_accommodation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Nationalise the Industries
+	focus = {
+		id = GRE_nationalise_the_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 34
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_economy_restoration_effort_p }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Land Redistribution
+	focus = {
+		id = GRE_land_redistribution
+		icon = GFX_goal_generic_national_unity
+		x = 34
+		y = 15
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_nationalise_the_industries }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Restore our Officers Focus
+	focus = {
+		id = GRE_restore_our_officers_focus
+		icon = GFX_focus_generic_military_mission
+		x = 37
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_induct_antiroyalist_government }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Seek for International Support
+	focus = {
+		id = GRE_seek_for_international_support
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 44
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_induct_antiroyalist_government }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Aegean Tomb Line Focus
+	focus = {
+		id = GRE_the_aegean_tomb_line_focus
+		icon = GFX_goal_generic_army_artillery2
+		x = 38
+		y = 17
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_propaganda_on_occupied_homelands }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Great Idea Focus P
+	focus = {
+		id = GRE_the_great_idea_focus_p
+		icon = GFX_goal_generic_small_arms
+		x = 38
+		y = 18
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_the_aegean_tomb_line_focus }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Allies with Italy
+	focus = {
+		id = GRE_allies_with_italy
+		icon = GFX_focus_generic_italy_first
+		x = 42
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_seek_for_international_support }
+		mutually_exclusive = { focus = GRE_allies_with_france }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Allies with France
+	focus = {
+		id = GRE_allies_with_france
+		icon = GFX_focus_chi_reach_out_to_france
+		x = 46
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_seek_for_international_support }
+		mutually_exclusive = { focus = GRE_allies_with_italy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Create Function Focus
+	focus = {
+		id = GRE_create_function_focus
+		icon = GFX_goal_generic_improve_relations
+		x = 36
+		y = 17
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = GRE_effort_against_northern_minorities }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }
